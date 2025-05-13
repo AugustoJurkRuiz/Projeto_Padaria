@@ -19,5 +19,5 @@ button {
     transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
 }
 button:hover {
-    background-color: #6b4f3a; /* Nova cor quando o mouse está sobre o botão */
+    background-color: #8a6245; /* Nova cor quando o mouse está sobre o botão */
 }

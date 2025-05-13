@@ -5,31 +5,31 @@
     
     <!-- Coluna para exibir o ID do contato -->
     <ng-container matColumnDef="conId">
-      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06; color: white;">Id</th>
       <td mat-cell *matCellDef="let row">{{row.conId}}</td>
     </ng-container>
 
     <!-- Coluna para exibir o telefone comercial -->
     <ng-container matColumnDef="conTelefoneComercial">
-      <th mat-header-cell *matHeaderCellDef>Telefone comercial</th>
+      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06; color: white;">Telefone comercial</th>
       <td mat-cell *matCellDef="let row">{{row.conTelefoneComercial}}</td>
     </ng-container>
 
     <!-- Coluna para exibir o celular -->
     <ng-container matColumnDef="conCelular">
-      <th mat-header-cell *matHeaderCellDef>Celular</th>
+      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06; color: white;">Celular</th>
       <td mat-cell *matCellDef="let row">{{row.conCelular}}</td>
     </ng-container>
 
     <!-- Coluna para exibir o e-mail -->
     <ng-container matColumnDef="conEmail">
-      <th mat-header-cell *matHeaderCellDef>E-mail</th>
+      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06; color: white;">E-mail</th>
       <td mat-cell *matCellDef="let row">{{row.conEmail}}</td>
     </ng-container>
 
     <!-- Coluna para exibir as ações (editar e deletar) -->
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>Ações</th>                    
+      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06; color: white;">Ações</th>                    
       <td mat-cell *matCellDef="let row">
           <!-- Link para editar o contato -->
           <a routerLink="/contato/update/{{ row.conId }}" class="edit">

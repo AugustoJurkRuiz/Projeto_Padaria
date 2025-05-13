@@ -1,7 +1,6 @@
-/* Full-width table with light gray background */
 table {
     width: 100%;
-    background-color: #e7e7e7;
+    background-color: white;
 }
 
 /* Edit icon color */

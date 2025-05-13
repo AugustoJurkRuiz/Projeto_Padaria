@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-read', // Define o seletor do componente
   templateUrl: './product-read.component.html', // Caminho para o template HTML
-  styleUrls: ['./product-read.component.css'] // Caminho para o arquivo de estilos CSS
+  styleUrls: ['./product-read.component.css'], // Caminho para o arquivo de estilos CSS
+  encapsulation: ViewEncapsulation.None
 })
 export class ProductReadComponent implements OnInit {
   products!: Product[]; // Lista de produtos
   displayedColumns = ['proId', 'proNome', 'proPrecoCusto', 'proPrecoVenda', 'action']; // Colunas exibidas na tabela
-
   // Injeta o serviço ProductService no construtor
-  constructor(private productService: ProductService) {}
+  constructor(public productService: ProductService) {}
 
   // Método executado ao inicializar o componente
   ngOnInit(): void {

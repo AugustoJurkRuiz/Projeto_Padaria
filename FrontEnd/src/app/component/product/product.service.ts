@@ -49,4 +49,15 @@ export class ProductService {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Product>(url);
   }
+
+  //Contador Produto
+  private _productCount = 0;
+
+  setProductCount(count: number) {
+  this._productCount = count;
+  }
+
+  getProductCount(): number {
+  return this._productCount;
+  }
 }
