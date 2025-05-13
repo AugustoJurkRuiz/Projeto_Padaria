@@ -1,0 +1,23 @@
+/* Estiliza o formulário para usar um layout flexível em coluna */
+form {
+    display: flex; 
+    flex-direction: column; 
+}
+/* Estiliza o botão com margens específicas */
+button {
+    margin: 20px 15px 0px 0px; /* Define as margens: superior, direita, inferior e esquerda */
+    /* width: 1689px; */ /* Define a largura do botão (comentado para evitar erro) */
+    height: 45px; /* Define a altura do botão */
+    background-color: #8a6245; /* Define a cor de fundo do botão */
+    color: #F5EBDD; /* Define a cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Define bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    font-size: 14px; /* Define o tamanho da fonte do texto do botão */
+    font-weight: bold; /* Define o peso da fonte como negrito */
+    text-align: center; /* Centraliza o texto dentro do botão */
+    transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
+}
+button:hover {
+    background-color: #6b4f3a; /* Nova cor quando o mouse está sobre o botão */
+}

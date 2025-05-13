@@ -1,0 +1,15 @@
+/* Define o estilo da tabela */
+table {
+    width: 100%; /* A tabela ocupa 100% da largura disponível */
+    background-color: #e7e7e7; /* Cor de fundo cinza claro */
+}
+
+/* Estiliza o ícone de edição */
+.edit > i {
+    color: #d9cd26; /* Cor amarela para o ícone de edição */
+}
+
+/* Estiliza o ícone de exclusão */
+.delete > i {
+    color: #e35e6b; /* Cor vermelha para o ícone de exclusão */
+}

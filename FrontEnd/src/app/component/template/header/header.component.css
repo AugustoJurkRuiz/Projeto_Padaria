@@ -1,0 +1,29 @@
+/* Estilo do cabeçalho */
+.header {
+    display: flex; /* Define layout flexível */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    background-color: #271910; /* Fundo preto */
+}
+
+/* Estilo dos links no cabeçalho */
+.header a {
+    display: flex; /* Define layout flexível */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    text-decoration: none; /* Remove sublinhado dos links */
+}
+
+/* Estilo do logo no cabeçalho */
+.header .logo {
+    max-height: 65px; /* Define altura máxima do logo */
+}
+
+/* Estilo do grupo de título no cabeçalho */
+.header .title-group {
+    padding-left: 25px; /* Espaçamento à esquerda */
+    color: #F5EBDD; /* Cor do texto */
+}
+
+/* Estilo do ícone dentro do grupo de título */
+.header .title-group i {
+    padding-right: 5px; /* Espaçamento à direita do ícone */
+}

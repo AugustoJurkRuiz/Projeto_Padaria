@@ -1,0 +1,18 @@
+/* Estilo para o rodapé */
+.footer {
+    /* Define posição fixa para o rodapé */
+    position: fixed;
+    /* Posiciona o rodapé na parte inferior da página */
+    bottom: 0;
+    display: flex; /* Define layout flexível */
+    /* Alinha o conteúdo no final da linha (lado direito) */
+    justify-content: flex-end;
+    background-color: #271910; /* Cor de fundo escura */
+}
+
+/* Estilo para o texto dentro do rodapé */
+.footer > span {
+    font-size: 1.1rem; /* Tamanho da fonte */
+    font-weight: 300; /* Peso da fonte leve */
+    color: aliceblue; /* Cor do texto */
+}

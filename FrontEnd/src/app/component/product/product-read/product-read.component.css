@@ -1,0 +1,15 @@
+/* Full-width table with light gray background */
+table {
+    width: 100%;
+    background-color: #e7e7e7;
+}
+
+/* Edit icon color */
+.edit > i {
+    color: #d9cd26;
+}
+
+/* Delete icon color */
+.delete > i {
+    color: #e35e6b;
+}

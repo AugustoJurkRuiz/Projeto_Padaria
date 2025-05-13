@@ -1,0 +1,15 @@
+button {
+    background-color: #8a6245; /* define a cor de fundo do botão */
+    margin-bottom: 30px; /* define a margem do botão */
+    width: 100%; /* define a largura do botão */
+    height: 50px; /* define a altura do botão */
+    color: #F5EBDD; /* define a cor do texto do botão */
+    border: none; /* remove a borda do botão */
+    border-radius: 5px; /* define bordas arredondadas */
+    transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
+    cursor: pointer; /* Muda o cursor para a mãozinha quando passar em cima, indicando que pode clicar */
+    font-size: 15px; /* Define o tamanho da fonte do texto do botão */
+}
+button:hover {
+    background-color: #6b4f3a; /* nova cor quando o mouse está sobre o botão */
+}

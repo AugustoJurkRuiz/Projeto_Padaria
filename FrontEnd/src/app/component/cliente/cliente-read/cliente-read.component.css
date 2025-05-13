@@ -1,0 +1,16 @@
+/* Estiliza a tabela para ocupar toda a largura disponível e define uma cor de fundo */
+table {
+    width: 100%; /* Define a largura da tabela como 100% do container */
+    background-color: #e7e7e7; /* Define a cor de fundo da tabela */
+    border-radius: 5px; /* Define bordas arredondadas */
+}
+
+/* Estiliza o ícone de edição */
+.edit > i {
+    color: #d9cd26; /* Define a cor do ícone de edição como amarelo */
+}
+
+/* Estiliza o ícone de exclusão */
+.delete > i {
+    color: #e35e6b; /* Define a cor do ícone de exclusão como vermelho */
+}
