@@ -42,6 +42,9 @@ import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-
 import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 import { ContatoUpdateComponent } from './component/contato/contato-update/contato-update.component';
 import { ContatoDeleteComponent } from './component/contato/contato-delete/contato-delete.component';
+import { MatSelectModule } from '@angular/material/select'; // Adicionado
+import { MatDatepickerModule } from '@angular/material/datepicker'; // Adicionado
+import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
 
 @NgModule({
   declarations: [
@@ -90,7 +93,10 @@ import { ContatoDeleteComponent } from './component/contato/contato-delete/conta
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

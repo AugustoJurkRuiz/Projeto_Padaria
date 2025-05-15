@@ -29,7 +29,7 @@ span {
 }
 /* Efeito de brilho ao passar o mouse */
 .sidenav a:hover {
-    background-color: #453221; /* Leve alteração na cor de fundo */
+    background-color: #38281b; /* Leve alteração na cor de fundo */
     font-size: 16px; /* Define o tamanho da fonte do texto do botão */
     border-radius: 5px; /* Define bordas arredondadas */
     margin: 5px 0; /* Margem entre os links */
