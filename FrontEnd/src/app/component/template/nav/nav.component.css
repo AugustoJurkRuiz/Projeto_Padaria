@@ -19,7 +19,8 @@ span {
 
 /* Estilo do conteúdo principal */
 .content {
-    padding: 16px; /* Espaçamento interno */
+    padding-left: 21.4%; /* Espaçamento interno */
+    padding-right: 5%; /* Espaçamento interno */
     background-color: #F5EBDD; /* Fundo branco */
 }
 

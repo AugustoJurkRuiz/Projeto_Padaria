@@ -1,15 +1,34 @@
+mat-card {
+  margin-left: 600px;
+  min-width: 1000px;
+  width: 75%;
+  background-color: #f0f0f0; /* Cor de fundo do card */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 50px; /* Padding interno */
+  margin: 16px 0; /* Margem externa */
+  align-items: center;
+}
+
+app-forma-pagamento-read{
+  width: 100%;
+}
+
 button {
     background-color: #8a6245; /* define a cor de fundo do botão */
     margin-bottom: 30px; /* define a margem do botão */
-    width: 100%; /* define a largura do botão */
+    width: 300px; /* define a largura do botão */
     height: 50px; /* define a altura do botão */
     color: #F5EBDD; /* define a cor do texto do botão */
     border: none; /* remove a borda do botão */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85);
     border-radius: 5px; /* define bordas arredondadas */
     transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
     cursor: pointer; /* Muda o cursor para a mãozinha quando passar em cima, indicando que pode clicar */
     font-size: 15px; /* Define o tamanho da fonte do texto do botão */
 }
+
 button:hover {
     background-color: #634530; /* nova cor quando o mouse está sobre o botão */
 }

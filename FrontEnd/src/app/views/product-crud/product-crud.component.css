@@ -1,4 +1,5 @@
 mat-card {
+  margin-left: 600px;
   min-width: 1000px;
   width: 75%;
   background-color: #f0f0f0; /* Cor de fundo do card */
