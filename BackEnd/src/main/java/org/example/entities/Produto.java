@@ -1,6 +1,8 @@
 package org.example.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -12,6 +14,7 @@ public class Produto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PRO_ID")
     private Long proId;
+
 
     @Column(name = "PRO_NOME")
     private String proNome;

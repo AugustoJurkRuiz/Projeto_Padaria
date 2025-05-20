@@ -53,4 +53,15 @@ export class ClienteService {
         const url = `${this.baseUrl}/${id}`; // Concatena o ID na URL
         return this.http.delete<Cliente>(url); // Envia uma requisição DELETE
     }
+
+    //Contador Cliente
+  private _clienteCount = 0;
+
+  setProductCount(count: number) {
+  this._clienteCount = count;
+  }
+
+  getProductCount(): number {
+  return this._clienteCount;
+  }
 }
