@@ -1,6 +1,6 @@
 ﻿<div align="center">
 
-[<img src="./assets/img/logo-padaria.png" width="144"/>]
+[<img src="FrontEnd/src/assets/img/logo-padaria.png" width="144"/>]
 
 <h1 align="center">🥖 Gestão de_Padaria 🌿</h1>
 
