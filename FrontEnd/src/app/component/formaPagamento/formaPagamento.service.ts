@@ -49,4 +49,15 @@ export class formaPagamentoService {
         const url = `${this.baseUrl}/${id}`; // Concatena o ID à URL base
         return this.http.delete<FormaPagamento>(url);
     }
+
+    //Contador Formas de Pagamentos
+  private _formaPagamentoCount = 0;
+
+  setformaPagamentoCount(count: number) {
+  this._formaPagamentoCount = count;
+  }
+
+  getformaPagamentoCount(): number {
+  return this._formaPagamentoCount;
+  }
 }

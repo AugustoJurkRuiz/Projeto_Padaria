@@ -21,19 +21,29 @@ export class ClienteCreateComponent implements OnInit {
 
   // Construtor que injeta o serviço ClienteService e o Router
   constructor(private clienteService: ClienteService,
-              private router: Router) { }
+    private router: Router) { }
 
   // Método chamado ao inicializar o componente
   ngOnInit(): void {
     // Nenhuma lógica inicial necessária
   }
 
+  submitted = false;
   // Método para criar um novo cliente
   createCliente(): void {
-    this.clienteService.create(this.cliente).subscribe(() => {
-      this.clienteService.showMessage('Cliente criado!'); // Exibe mensagem de sucesso
-      this.router.navigate(['/clientes']); // Navega para a lista de clientes
-    });
+    this.submitted = true; // Ativa a borda vermelha
+    // Só envia se todos os campos estiverem preenchidos
+    if (
+      this.cliente.cliNome &&
+      this.cliente.cliCpf &&
+      this.cliente.cliEmail &&
+      this.cliente.cliTelefone
+    ) {
+      this.clienteService.create(this.cliente).subscribe(() => {
+        this.clienteService.showMessage('Cliente criado!'); // Exibe mensagem de sucesso
+        this.router.navigate(['/clientes']); // Navega para a lista de clientes
+      });
+    }
   }
 
   // Método para cancelar a operação e voltar para a lista de clientes

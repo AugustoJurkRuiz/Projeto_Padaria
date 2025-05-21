@@ -4,6 +4,7 @@
     position: fixed;
     /* Posiciona o rodapé na parte inferior da página */
     bottom: 0;
+    z-index: 1;
     display: flex; /* Define layout flexível */
     /* Alinha o conteúdo no final da linha (lado direito) */
     justify-content: flex-end;

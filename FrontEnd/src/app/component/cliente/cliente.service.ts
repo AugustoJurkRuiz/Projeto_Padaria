@@ -57,11 +57,11 @@ export class ClienteService {
     //Contador Cliente
   private _clienteCount = 0;
 
-  setProductCount(count: number) {
+  setClienteCount(count: number) {
   this._clienteCount = count;
   }
 
-  getProductCount(): number {
+  getClienteCount(): number {
   return this._clienteCount;
   }
 }

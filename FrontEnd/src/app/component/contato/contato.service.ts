@@ -49,4 +49,15 @@ export class contatoService {
         const url = `${this.baseUrl}/${id}`; // Concatena o ID à URL base
         return this.http.delete<Contato>(url);
     }
+    
+    //Contador Contatos
+  private _contatoCount = 0;
+
+  setContatoCount(count: number) {
+  this._contatoCount = count;
+  }
+
+  getContatoCount(): number {
+  return this._contatoCount;
+  }
 }

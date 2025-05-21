@@ -2,6 +2,10 @@
 .sidenav {
     background-color: #453221; /* Fundo marrom */
     width: 200px; /* Largura fixa */
+    height: 100%;
+    top: 60px; /* logo abaixo do header */
+    position: fixed; /* ou absolute */
+    z-index: 50;
 }
 
 /* Estilo dos links na barra lateral */
@@ -9,6 +13,19 @@
     color: #fff; /* Texto branco */
 }
 
+.home {
+    margin-top: 64px;
+}
+
+
+.home:hover{
+    background-color: #38281b; /* Leve alteração na cor de fundo */
+    font-size: 16px; /* Define o tamanho da fonte do texto do botão */
+    border-radius: 5px; /* Define bordas arredondadas */
+    height: 60px; /* Define a altura do botão */
+    width: 100%; /* Largura total */
+    transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
+}
 span {
     color:white;
 }
@@ -19,9 +36,11 @@ span {
 
 /* Estilo do conteúdo principal */
 .content {
+    margin-top: 64px;
     padding-left: 21.4%; /* Espaçamento interno */
     padding-right: 5%; /* Espaçamento interno */
     background-color: #F5EBDD; /* Fundo branco */
+    z-index: 0;
 }
 
 /* Cor padrão dos ícones */
@@ -29,13 +48,12 @@ span {
     color: white; /* branco */
 }
 /* Efeito de brilho ao passar o mouse */
-.sidenav a:hover {
+.sidenav a:not(.home):hover 
+   {
     background-color: #38281b; /* Leve alteração na cor de fundo */
     font-size: 16px; /* Define o tamanho da fonte do texto do botão */
-    border-radius: 5px; /* Define bordas arredondadas */
-    margin: 5px 0; /* Margem entre os links */
-    padding: 10px; /* Espaçamento interno */    
-    height: 40px; /* Define a altura do botão */
+    border-radius: 5px; /* Define bordas arredondadas */ 
+    height: 60px; /* Define a altura do botão */
     width: 100%; /* Largura total */
     transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
 }
