@@ -12,8 +12,8 @@ export class ProductCreateComponent implements OnInit {
     product: Product = {
     proNome: '', // Nome do produto
     proDescricao: '', // Descrição do produto
-    proPrecoCusto: 0, // Preço de custo inicial
-    proPrecoVenda: 0, // Preço de venda inicial
+    proPrecoCusto: null, // Preço de custo inicial
+    proPrecoVenda: null, // Preço de venda inicial
     proQuantidadeEstoque: null, // Quantidade em estoque inicial
     proCategoria: '', // Categoria do produto
     proCodigoBarras: '', // Código de barras do produto
@@ -30,8 +30,24 @@ export class ProductCreateComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  submitted = false;
   // Método para criar um produto
   createProduct(): void {
+    this.submitted = true; // Ativa a borda vermelha
+    // Só envia se todos os campos estiverem preenchidos
+    if (
+      this.product.proAtivo &&
+      this.product.proCategoria &&
+      this.product.proCodigoBarras &&
+      this.product.proDataAtualizacao &&
+      this.product.proDataCadastro &&
+      this.product.proId &&
+      this.product.proNome &&
+      this.product.proPrecoCusto &&
+      this.product.proPrecoVenda &&
+      this.product.proQuantidadeEstoque &&
+      this.product.proUnidadeMedida
+    ) 
     this.productService.create(this.product).subscribe(() => {
       this.productService.showMessage('Produto criado!'); // Exibe mensagem de sucesso
       this.router.navigate(['/products']); // Redireciona para a lista de produtos

@@ -1,21 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/component/product/product.model';
+import { ProductService } from 'src/app/component/product/product.service';
 
 @Component({
-  selector: 'app-product-crud', // Define o seletor do componente
-  templateUrl: './product-crud.component.html', // Caminho para o template HTML
-  styleUrls: ['./product-crud.component.css'] // Caminho para o arquivo de estilos CSS
+  selector: 'app-product-crud',
+  templateUrl: './product-crud.component.html',
+  styleUrls: ['./product-crud.component.css']
 })
 export class ProductCrudComponent implements OnInit {
-  // Construtor para injetar o serviço de roteamento
-  constructor(private router: Router) { }
+  searchTerm: string = '';
+  allProducts: Product[] = [];
+  filteredProducts: Product[] = [];
 
-  // Método chamado ao inicializar o componente
+  constructor(
+    private router: Router,
+    private productService: ProductService
+  ) {}
+
   ngOnInit(): void {
+    this.productService.read().subscribe(products => {
+      this.allProducts = products;
+      this.filteredProducts = products;
+    });
   }
-  
-  // Método para navegar para a tela de criação de produtos
+
   navigateToProductCreate(): void {
     this.router.navigate(['/products/create']);
+  }
+
+  filterProducts(): void {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredProducts = this.allProducts.filter(p =>
+      p.proNome.toLowerCase().includes(term)
+    );
   }
 }

@@ -3,32 +3,32 @@
     <mat-card-title>Novo Produto</mat-card-title>
     <div class="scrollable-form">
       <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
+        <mat-form-field [class.erro]="submitted && nome.invalid">
+            <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome" required #nome="ngModel">
         </mat-form-field>
-        <mat-form-field>
-            <textarea matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao"></textarea>
+        <mat-form-field [class.erro]="submitted && descricao.invalid">
+            <textarea matInput placeholder="Descrição" [(ngModel)]="product.proDescricao" name="proDescricao" required #descricao="ngModel"></textarea>
         </mat-form-field>
-        <mat-form-field>
-            <input matInput type="number" placeholder="Preço de custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto" step="0.01" min="0">
+        <mat-form-field [class.erro]="submitted && precocusto.invalid">
+            <input matInput type="number" placeholder="Preço de custo (R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto" step="0.01" min="0" required #precocusto="ngModel">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput type="number" placeholder="Preço de venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda" step="0.01" min="0">
+        <mat-form-field [class.erro]="submitted && precovenda.invalid">
+            <input matInput type="number" placeholder="Preço de venda (R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda" step="0.01" min="0" required #precovenda="ngModel">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput type="number" placeholder="Quantidade em estoque" [(ngModel)]="product.proQuantidadeEstoque" name="proQuantidadeEstoque"min="0">
+        <mat-form-field [class.erro]="submitted && quantidade.invalid">
+            <input matInput type="number" placeholder="Quantidade em estoque" [(ngModel)]="product.proQuantidadeEstoque" name="proQuantidadeEstoque"min="0" required #quantidade="ngModel">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
+        <mat-form-field [class.erro]="submitted && categoria.invalid">
+            <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria" required #categoria="ngModel">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Código de barras" [(ngModel)]="product.proCodigoBarras" name="proCodigoBarras">
+        <mat-form-field [class.erro]="submitted && codigobarras.invalid"> 
+            <input matInput placeholder="Código de barras" [(ngModel)]="product.proCodigoBarras" name="proCodigoBarras" required #codigobarras="ngModel">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
+        <mat-form-field [class.erro]="submitted && marca.invalid">
+            <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca" required #marca="ngModel">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Unidade de medida" [(ngModel)]="product.proUnidadeMedida" name="proUnidadeMedida">
+        <mat-form-field [class.erro]="submitted && unidademedida.invalid">
+            <input matInput placeholder="Unidade de medida" [(ngModel)]="product.proUnidadeMedida" name="proUnidadeMedida" required #unidademedida="ngModel">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Produto Ativo?</mat-label>
@@ -52,7 +52,10 @@
 
     <button mat-raised-button (click)="createProduct()" color="primary">
         Salvar
-    </button>
+    </button>  
+
+
+    
    
     <button mat-raised-button (click)="cancel()">
         Cancelar

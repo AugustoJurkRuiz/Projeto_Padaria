@@ -36,11 +36,10 @@ span {
 
 /* Estilo do conteúdo principal */
 .content {
-    margin-top: 64px;
-    padding-left: 21.4%; /* Espaçamento interno */
-    padding-right: 5%; /* Espaçamento interno */
+    margin-top: 94px; /*64px do Header e mais 30 para centralizar */
     background-color: #F5EBDD; /* Fundo branco */
     z-index: 0;
+    margin-bottom: 65px;
 }
 
 /* Cor padrão dos ícones */
@@ -56,4 +55,8 @@ span {
     height: 60px; /* Define a altura do botão */
     width: 100%; /* Largura total */
     transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
+}
+
+.container{
+    background-color: #F5EBDD;
 }
