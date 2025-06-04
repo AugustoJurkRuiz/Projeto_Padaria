@@ -21,7 +21,7 @@
 .home:hover{
     background-color: #38281b; /* Leve alteração na cor de fundo */
     font-size: 16px; /* Define o tamanho da fonte do texto do botão */
-    border-radius: 5px; /* Define bordas arredondadas */
+    
     height: 60px; /* Define a altura do botão */
     width: 100%; /* Largura total */
     transition: all 0.3s ease; /* Suaviza as mudanças de estilo */
@@ -37,7 +37,7 @@ span {
 /* Estilo do conteúdo principal */
 .content {
     margin-top: 94px; /*64px do Header e mais 30 para centralizar */
-    background-color: #F5EBDD; /* Fundo branco */
+    background: linear-gradient(135deg, #F5EBDD 0%, #b9a484 100%); /* Fundo branco */
     z-index: 0;
     margin-bottom: 65px;
 }
@@ -58,5 +58,11 @@ span {
 }
 
 .container{
-    background-color: #F5EBDD;
+    background:
+    linear-gradient(
+            130deg,
+            #F5EBDD 0% 200px,
+            #b9a484 100%
+        )
+    
 }
