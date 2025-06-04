@@ -12,7 +12,9 @@ import { FornecedorService } from 'src/app/component/fornecedor/fornecedor.servi
   templateUrl: './home.component.html', // Caminho para o template HTML
   styleUrls: ['./home.component.css'] // Caminho para o arquivo de estilos CSS
 })
+
 export class HomeComponent implements OnInit{
+  
   constructor(public productService: ProductService,
               public clienteService: ClienteService, 
               public contatoService: contatoService,
@@ -25,6 +27,8 @@ export class HomeComponent implements OnInit{
   fornecedorCount: number = 0;
 
   ngOnInit(): void {
+  
+
     this.productService.read().subscribe(products => {
       this.productCount = products.length; // Conta a quantidade de produtos
     const count = this.productService.getProductCount();
@@ -47,3 +51,5 @@ export class HomeComponent implements OnInit{
   });
 }
 }
+export var icone:string = "home";
+export var titulo:string = "Início"

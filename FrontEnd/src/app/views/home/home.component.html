@@ -13,12 +13,14 @@
         <h3><span>💰</span> Vendas do Dia</h3>
         <p>R$ 1.250,00</p>
       </div>
-      <a class="card" mat-list-item routerLink="/products">
-      <div>
-        <h3><span>🥖</span> produtos cadastrados: </h3>
-        <p>{{ productCount }}</p>
-    </div>
-    </a>
+      <div class="card">
+        <a mat-list-item routerLink="/products" class="card-link">
+          <div>
+            <h3><span>🥖</span> produtos cadastrados: </h3>
+            <p>{{ productCount }}</p>
+          </div>
+        </a>
+      </div>
       <div class="card">
         <h3><span>👥</span> Clientes Atendidos</h3>
         <p>22</p>
