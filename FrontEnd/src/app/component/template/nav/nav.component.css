@@ -37,7 +37,7 @@ span {
 /* Estilo do conteúdo principal */
 .content {
     margin-top: 94px; /*64px do Header e mais 30 para centralizar */
-    background: linear-gradient(135deg, #F5EBDD 0%, #b9a484 100%); /* Fundo branco */
+    background: linear-gradient(90deg,#F5EBDD 0% 0px,#b9a484 100%);
     z-index: 0;
     margin-bottom: 65px;
 }
@@ -58,11 +58,5 @@ span {
 }
 
 .container{
-    background:
-    linear-gradient(
-            130deg,
-            #F5EBDD 0% 200px,
-            #b9a484 100%
-        )
-    
+    background: linear-gradient(90deg,#F5EBDD 0% 200px,#b9a484 100%);
 }

@@ -1,5 +1,5 @@
 // Importações necessárias para o componente
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Cliente } from '../cliente.model';
 import { ClienteService } from '../cliente.service'; 
 
@@ -9,9 +9,9 @@ import { ClienteService } from '../cliente.service';
   templateUrl: './cliente-read.component.html', // Caminho para o template HTML do componente
   styleUrls: ['./cliente-read.component.css'] // Caminho para o arquivo de estilos CSS do componente
 })
-export class ClienteReadComponent {
+export class ClienteReadComponent implements OnInit {
+  @Input() clientes: Cliente[] = [];
   // Array que armazena os dados dos clientes
-  clientes!: Cliente[];
 
   // Colunas exibidas na tabela
   displayedColumns = ['cliId', 'cliNome', 'cliCpf', 'cliEmail', 'cliTelefone', 'action'];

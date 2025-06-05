@@ -16,7 +16,7 @@ html, body {
 
 /* Estilo do elemento principal: Define um gradiente de fundo, altura mínima e padding */
 main {
-    background: linear-gradient(135deg, #F5EBDD 0%, #b9a484 100%);
+    background: linear-gradient(90deg,#F5EBDD 0% ,#b9a484 100%);
     background-size: cover;
     background-position: center;
     min-height: 83vh;
