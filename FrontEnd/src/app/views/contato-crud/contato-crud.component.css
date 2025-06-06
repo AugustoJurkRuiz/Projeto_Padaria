@@ -1,13 +1,19 @@
-mat-card {
-  margin-left: 600px;
-  min-width: 1000px;
-  width: 75%;
-  background-color: #f0f0f0; /* Cor de fundo do card */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  padding: 50px; /* Padding interno */
-  margin: 16px 0; /* Margem externa */
-  align-items: center;
+main{
+  background-image: url('https://clubetaup.com.br/wp-content/uploads/2023/06/MADEIRA-27-jpg.webp');
+  background-size: 100% auto;       
+  background-repeat: repeat-y;  
+  background-position: top center;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  border-radius: 20px;
+  padding: 2.5rem 3rem 3rem 3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  user-select: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
 app-contato-read{

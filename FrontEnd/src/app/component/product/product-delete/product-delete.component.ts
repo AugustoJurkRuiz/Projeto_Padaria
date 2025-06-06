@@ -18,9 +18,13 @@ export class ProductDeleteComponent {
 
   ngOnInit(): void {
     const proId = this.route.snapshot.paramMap.get('proId');
-    this.productService.readById(proId!).subscribe(product =>{
-      this.product = product
-    })
+  this.productService.readById(proId!).subscribe(product => {
+    // Converte se ainda estiver como string
+    if (typeof product.proAtivo === 'string') {
+      product.proAtivo = product.proAtivo === 'true';
+    }
+    this.product = product;
+  });
   }
 
   deleteProduct(): void {

@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-title>Excluir Produto</mat-card-title>
-    <form>
+    <form *ngIf="product">
         <mat-form-field>
             <input matInput placeholder="Nome" [value]="product.proNome" name="proNome" disabled>
         </mat-form-field>

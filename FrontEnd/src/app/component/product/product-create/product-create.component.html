@@ -32,7 +32,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Produto Ativo?</mat-label>
-            <mat-select [(ngModel)]="product.proAtivo" name="proAtivo">
+            <mat-select [(ngModel)]="product.proAtivo" name="proAtivo" required>
               <mat-option [value]="true">Sim</mat-option> 
               <mat-option [value]="false">Não</mat-option>
             </mat-select>

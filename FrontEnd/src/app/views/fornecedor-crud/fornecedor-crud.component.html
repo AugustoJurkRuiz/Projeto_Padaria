@@ -1,6 +1,15 @@
-<mat-card>
+<main>
 <button mat-raised-button (click)="navigateToFornecedorCreate()" color="primary">
     Novo fornecedor
 </button>
-<app-fornecedor-read></app-fornecedor-read>
-</mat-card>
+
+<input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="filterFornecedores()"
+    placeholder="Buscar fornecedor..."
+    class = "pesquisa"
+  />
+  
+  <app-fornecedor-read [fornecedor]="filteredFornecedores"></app-fornecedor-read>
+</main>

@@ -16,10 +16,14 @@ export class ProductUpdateComponent {
     private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('proId')
-    this.productService.readById(id!).subscribe((product: Product) =>{
-      this.product = product
-    })
+    const proId = this.route.snapshot.paramMap.get('proId');
+  this.productService.readById(proId!).subscribe(product => {
+    // Converte se ainda estiver como string
+    if (typeof product.proAtivo === 'string') {
+      product.proAtivo = product.proAtivo === 'true';
+    }
+    this.product = product;
+  });
   }
 
   updateProduct(): void {

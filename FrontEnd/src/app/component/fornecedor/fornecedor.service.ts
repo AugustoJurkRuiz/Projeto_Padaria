@@ -49,4 +49,15 @@ export class FornecedorService {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Fornecedor>(url);
   }
+
+  //Contador Fornecedores
+  private _fornecedorCount = 0;
+
+  setfornecedorCount(count: number) {
+  this._fornecedorCount = count;
+  }
+
+  getfornecedorCount(): number {
+  return this._fornecedorCount;
+  }
 }

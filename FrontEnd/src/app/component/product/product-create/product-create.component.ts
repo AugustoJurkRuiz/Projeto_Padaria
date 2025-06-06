@@ -32,7 +32,7 @@ export class ProductCreateComponent implements OnInit {
 
   submitted = false;
   // Método para criar um produto
-  createProduct(): void {
+  createProduct(): void {   
     this.submitted = true; // Ativa a borda vermelha
     // Só envia se todos os campos estiverem preenchidos
     if (
@@ -41,13 +41,13 @@ export class ProductCreateComponent implements OnInit {
       this.product.proCodigoBarras &&
       this.product.proDataAtualizacao &&
       this.product.proDataCadastro &&
-      this.product.proId &&
       this.product.proNome &&
       this.product.proPrecoCusto &&
       this.product.proPrecoVenda &&
       this.product.proQuantidadeEstoque &&
       this.product.proUnidadeMedida
     ) 
+    
     this.productService.create(this.product).subscribe(() => {
       this.productService.showMessage('Produto criado!'); // Exibe mensagem de sucesso
       this.router.navigate(['/products']); // Redireciona para a lista de produtos

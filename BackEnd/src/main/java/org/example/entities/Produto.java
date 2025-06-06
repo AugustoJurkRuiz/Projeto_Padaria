@@ -44,7 +44,7 @@ public class Produto implements Serializable {
     private String proUnidadeMedida;
 
     @Column(name = "PRO_ATIVO")
-    private String proAtivo;
+    private Boolean proAtivo;
 
     @Column(name = "PRO_DATA_CADASTRO")
     private LocalDateTime proDataCadastro;

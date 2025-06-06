@@ -1,10 +1,10 @@
-/* ==== BOTÃO "NOVO PRODUTO" COM TONS MARRONS ==== */
+/* ==== BOTÃO "NOVO CLIENTE"  ==== */
 button {
-  background: linear-gradient(145deg, #8b5e3c, #5c3a1a); /* Marrom médio para escuro */
+  background: linear-gradient(90deg, #e78d06 250px, #805412); 
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1.15rem;
-  color: white;
+  color: #F5EBDD;
   border-radius: 14px;
   box-shadow: 0 6px 12px rgba(92, 58, 26, 0.4);
   font-weight: 600;
@@ -20,18 +20,18 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(145deg, #5c3a1a, #8b5e3c); /* Inversão no hover */
+  background: linear-gradient(90deg, #855814 , #e78d06); /* Inversão no hover */
   box-shadow: 0 10px 22px rgba(92, 58, 26, 0.6);
   transform: translateY(-2px);
 }
 
 
-/* ==== CAMPO DE PESQUISA COM VISUAL MAIS TERROSO ==== */
+/* ==== CAMPO DE PESQUISA  ==== */
 .pesquisa {
   padding: 0.75rem 1.2rem;
-  border: 2px solid #b98e68; /* Marrom claro */
+  border: 2px solid #e78d06; 
   border-radius: 10px;
-  background-color: #e6d3c3; /* Bege/marrom muito claro */
+  background-color: #e2c395; 
   color: #5c3a1a; /* Marrom escuro */
   font-size: 16px;
   outline: none;
@@ -52,7 +52,10 @@ button:hover {
 
 /* ==== CONTAINER PRINCIPAL ==== */
 main {
-  background: white;
+  background-image: url('https://clubetaup.com.br/wp-content/uploads/2023/06/MADEIRA-27-jpg.webp');
+  background-size: 100% auto;       
+  background-repeat: repeat-y;  
+  background-position: top center;
   max-width: 1200px;
   margin: auto;
   width: 100%;
