@@ -56,7 +56,7 @@ public class Produto implements Serializable {
     }
 
     // Construtor com todos os atributos pode ser adicionado aqui se necessário
-    public Produto(Long proId, String proNome, String proDescricao, BigDecimal proPrecoCusto, BigDecimal proPrecoVenda, Integer proQuantidadeEstoque, String proCategoria, String proCodigoBarras, String proMarca, String proUnidadeMedida, String proAtivo, LocalDateTime proDataCadastro, LocalDateTime proDataAtualizacao) {
+    public Produto(Long proId, String proNome, String proDescricao, BigDecimal proPrecoCusto, BigDecimal proPrecoVenda, Integer proQuantidadeEstoque, String proCategoria, String proCodigoBarras, String proMarca, String proUnidadeMedida, Boolean proAtivo, LocalDateTime proDataCadastro, LocalDateTime proDataAtualizacao) {
         this.proId = proId;
         this.proNome = proNome;
         this.proDescricao = proDescricao;
@@ -153,11 +153,11 @@ public class Produto implements Serializable {
         this.proUnidadeMedida = proUnidadeMedida;
     }
 
-    public String getProAtivo() {
+    public Boolean getProAtivo() {
         return proAtivo;
     }
 
-    public void setProAtivo(String proAtivo) {
+    public void setProAtivo(Boolean proAtivo) {
         this.proAtivo = proAtivo;
     }
 

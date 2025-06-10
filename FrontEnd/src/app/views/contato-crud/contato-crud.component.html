@@ -2,5 +2,15 @@
 <button mat-raised-button (click)="navigateToContatoCreate()" color="primary">
     Novo Contato
 </button>
-<app-contato-read></app-contato-read>
+
+<input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="filterContatos()"
+    placeholder="Buscar contato..."
+    class = "pesquisa"
+  />
+  
+  <app-contato-read [contato]="filteredContatos"></app-contato-read>
+
 </main>

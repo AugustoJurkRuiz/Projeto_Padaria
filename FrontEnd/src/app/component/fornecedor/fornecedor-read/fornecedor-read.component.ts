@@ -8,11 +8,11 @@ import { FornecedorService } from '../fornecedor.service';
   styleUrls: ['./fornecedor-read.component.css'] // Caminho para o arquivo de estilos CSS
 })
 export class FornecedorReadComponent implements OnInit {
- @Input() fornecedor: Fornecedor[] = [];
+  @Input() fornecedor: Fornecedor[] = [];
   displayedColumns = ['forId', 'forNomeFantasia', 'forCnpj', 'forRazaoSocial', 'action']; // Colunas exibidas na tabela
 
   // Injeta o serviço FornecedorService no construtor
-  constructor(private fornecedorService: FornecedorService) {}
+  constructor(private fornecedorService: FornecedorService) { }
 
   // Método executado ao inicializar o componente
   ngOnInit(): void {

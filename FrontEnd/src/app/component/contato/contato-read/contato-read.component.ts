@@ -1,8 +1,5 @@
-// Importa o decorador Component do Angular
-import { Component } from '@angular/core';
-// Importa o modelo de dados Contato
+import { Component, Input } from '@angular/core';
 import { Contato } from '../contato-read.model';
-// Importa o serviço responsável por operações relacionadas a Contato
 import { contatoService } from '../contato.service';
 
 // Define o componente Angular
@@ -12,8 +9,8 @@ import { contatoService } from '../contato.service';
   styleUrls: ['./contato-read.component.css'] // Caminho para o arquivo de estilos CSS
 })
 export class ContatoReadComponent {
+  @Input() contato: Contato[] = [];
   // Array para armazenar os contatos retornados do serviço
-  contato!: Contato[];
   // Define as colunas que serão exibidas na tabela
   displayedColumns = ['conId', 'conTelefoneComercial', 'conCelular', 'conEmail', 'action'];
 

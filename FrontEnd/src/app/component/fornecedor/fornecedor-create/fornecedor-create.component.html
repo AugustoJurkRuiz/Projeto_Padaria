@@ -11,15 +11,6 @@
                 name="forNomeFantasia">
         </mat-form-field>
 
-        <!-- Campo de entrada para a Razão Social -->
-        <mat-form-field>
-            <input 
-                matInput 
-                placeholder="Razão social" 
-                [(ngModel)]="fornecedor.forRazaoSocial" 
-                name="forRazaoSocial">
-        </mat-form-field>
-
         <!-- Campo de entrada para o CNPJ -->
         <mat-form-field>
             <input 
@@ -27,6 +18,15 @@
                 placeholder="CNPJ" 
                 [(ngModel)]="fornecedor.forCnpj" 
                 name="forCnpj">
+        </mat-form-field>
+
+        <!-- Campo de entrada para a Razão social -->
+        <mat-form-field>
+            <input 
+                matInput 
+                placeholder="Razão social" 
+                [(ngModel)]="fornecedor.forRazaoSocial" 
+                name="forRazaoSocial">
         </mat-form-field>
 
     </form>

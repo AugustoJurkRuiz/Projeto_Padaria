@@ -1,7 +1,7 @@
 // Importações necessárias para o componente
 import { Component, Input, OnInit } from '@angular/core';
 import { Cliente } from '../cliente.model';
-import { ClienteService } from '../cliente.service'; 
+import { ClienteService } from '../cliente.service';
 
 // Decorador que define o componente Angular
 @Component({

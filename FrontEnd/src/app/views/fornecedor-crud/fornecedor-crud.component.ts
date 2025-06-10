@@ -9,29 +9,29 @@ import { FornecedorService } from 'src/app/component/fornecedor/fornecedor.servi
   styleUrls: ['./fornecedor-crud.component.css'] // Caminho para o arquivo de estilos CSS
 })
 export class FornecedorCrudComponent implements OnInit {
-    searchTerm: string = '';
-    allFornecedores: Fornecedor[] = [];
-    filteredFornecedores: Fornecedor[] = [];
-    // Construtor para injetar o serviço de roteamento
-    constructor(
-      private router: Router,
-      private fornecedorService: FornecedorService
-    ) { }
+  searchTerm: string = '';
+  allFornecedores: Fornecedor[] = [];
+  filteredFornecedores: Fornecedor[] = [];
+  // Construtor para injetar o serviço de roteamento
+  constructor(
+    private router: Router,
+    private fornecedorService: FornecedorService
+  ) { }
 
-    // Método chamado ao inicializar o componente
-    ngOnInit(): void {
-      this.fornecedorService.read().subscribe(fornecedor => {
+  // Método chamado ao inicializar o componente
+  ngOnInit(): void {
+    this.fornecedorService.read().subscribe(fornecedor => {
       this.allFornecedores = fornecedor;
       this.filteredFornecedores = fornecedor;
     });
-    }
-    
-    // Método para navegar para a tela de criação de fornecedores
-    navigateToFornecedorCreate(): void {
-      this.router.navigate(['/fornecedor/create']);
-    }
+  }
 
-    filterFornecedores(): void {
+  // Método para navegar para a tela de criação de fornecedores
+  navigateToFornecedorCreate(): void {
+    this.router.navigate(['/fornecedor/create']);
+  }
+
+  filterFornecedores(): void {
     const term = this.searchTerm.toLowerCase();
     this.filteredFornecedores = this.allFornecedores.filter(p =>
       p.forNomeFantasia.toLowerCase().includes(term)

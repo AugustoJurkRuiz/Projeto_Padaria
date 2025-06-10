@@ -13,11 +13,11 @@ export class ClienteUpdateComponent {
 
   constructor(private clienteService: ClienteService,
     private router: Router,
-    private route: ActivatedRoute) {}
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const cliId = this.route.snapshot.paramMap.get('cliId')
-    this.clienteService.readById(cliId!).subscribe((cliente: Cliente) =>{
+    this.clienteService.readById(cliId!).subscribe((cliente: Cliente) => {
       this.cliente = cliente
     })
   }

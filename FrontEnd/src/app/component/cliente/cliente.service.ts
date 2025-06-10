@@ -1,9 +1,9 @@
 // Importações essenciais para o funcionamento do serviço
-import { HttpClient } from "@angular/common/http"; 
-import { Injectable } from "@angular/core"; 
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { Observable } from "rxjs"; 
-import { Cliente } from './cliente.model'; 
+import { Observable } from "rxjs";
+import { Cliente } from './cliente.model';
 
 // Decorador que define o serviço como disponível em toda a aplicação
 @Injectable({
@@ -28,12 +28,12 @@ export class ClienteService {
 
     // Método para criar um novo cliente
     create(cliente: Cliente): Observable<Cliente> {
-        return this.http.post<Cliente>(this.baseUrl, cliente); 
+        return this.http.post<Cliente>(this.baseUrl, cliente);
     }
 
     // Método para obter a lista de clientes
     read(): Observable<Cliente[]> {
-        return this.http.get<Cliente[]>(this.baseUrl); 
+        return this.http.get<Cliente[]>(this.baseUrl);
     }
 
     // Método para obter um cliente pelo ID
@@ -55,13 +55,13 @@ export class ClienteService {
     }
 
     //Contador Cliente
-  private _clienteCount = 0;
+    private _clienteCount = 0;
 
-  setClienteCount(count: number) {
-  this._clienteCount = count;
-  }
+    setClienteCount(count: number) {
+        this._clienteCount = count;
+    }
 
-  getClienteCount(): number {
-  return this._clienteCount;
-  }
+    getClienteCount(): number {
+        return this._clienteCount;
+    }
 }
