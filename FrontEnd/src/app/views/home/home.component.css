@@ -14,11 +14,13 @@ html, body {
     overflow-x: hidden; /* Evita scroll horizontal, caso algum elemento esteja "vazando" */
 }
 
+body{
+    background: transparent;
+}
+
 /* Estilo do elemento principal: Define um gradiente de fundo, altura mínima e padding */
 main {
-    background: linear-gradient(90deg,#F5EBDD 0% ,#b9a484 100%);
-    background-size: cover;
-    background-position: center;
+    background: transparent;
     min-height: 83vh;
     padding: 40px 20px;
 }

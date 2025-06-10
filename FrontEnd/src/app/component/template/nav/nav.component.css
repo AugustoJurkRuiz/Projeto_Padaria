@@ -36,10 +36,12 @@ span {
 
 /* Estilo do conteúdo principal */
 .content {
-    margin-top: 94px; /*64px do Header e mais 30 para centralizar */
-    background: linear-gradient(90deg,#F5EBDD 0% 0px,#b9a484 100%);
+    position: relative;
+    margin-top: 64px; /*64px do Header */
+    background: transparent;
     z-index: 0;
     margin-bottom: 65px;
+    overflow: hidden;
 }
 
 /* Cor padrão dos ícones */
@@ -58,5 +60,5 @@ span {
 }
 
 .container{
-    background: linear-gradient(90deg,#F5EBDD 0% 200px,#b9a484 100%);
+    background: transparent;
 }
