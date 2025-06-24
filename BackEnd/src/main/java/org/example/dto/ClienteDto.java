@@ -1,36 +1,34 @@
 package org.example.dto;
 
 
-public class ClienteDTO {
+import org.hibernate.validator.constraints.br.CPF;
 
+public class ClienteDto {
+    //cliente
     private Long cliId;
-
     private String cliNome;
+    @CPF(message = "CPF inválido")
     private String cliCpf;
-    private String cliEmail;
-    private String cliTelefone;
-    private String cliEndereco;
+
+    //endereco
     private String endRua;
-
-
     private String endNumero;
     private String endCidade;
     private String endCep;
     private String endEstado;
 
-
+    //contato
     private String conCelular;
     private String conTelefoneComercial;
     private String conEmail;
 
+    //construtor
 
 
-
-    public ClienteDTO(){
+    public ClienteDto() {
     }
 
-
-
+    //gatters e setters
     public Long getCliId() {
         return cliId;
     }
@@ -53,30 +51,6 @@ public class ClienteDTO {
 
     public void setCliCpf(String cliCpf) {
         this.cliCpf = cliCpf;
-    }
-
-    public String getCliEmail() {
-        return cliEmail;
-    }
-
-    public void setCliEmail(String cliEmail) {
-        this.cliEmail = cliEmail;
-    }
-
-    public String getCliTelefone() {
-        return cliTelefone;
-    }
-
-    public void setCliTelefone(String cliTelefone) {
-        this.cliTelefone = cliTelefone;
-    }
-
-    public String getCliEndereco() {
-        return cliEndereco;
-    }
-
-    public void setCliEndereco(String cliEndereco) {
-        this.cliEndereco = cliEndereco;
     }
 
     public String getEndRua() {
