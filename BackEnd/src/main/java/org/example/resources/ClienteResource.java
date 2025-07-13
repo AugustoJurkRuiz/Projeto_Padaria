@@ -30,10 +30,10 @@ public class ClienteResource {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> findById(@PathVariable Long id) {
+    public ResponseEntity<ClienteDto> findById(@PathVariable Long id) {
         Cliente obj = clienteService.findById(id);
         ClienteDto dto = clienteService.toNewDto(obj);
-        return ResponseEntity.ok().body(obj);
+        return ResponseEntity.ok().body(dto); // retorna o DTO com tudo preenchido
     }
 
     @PostMapping

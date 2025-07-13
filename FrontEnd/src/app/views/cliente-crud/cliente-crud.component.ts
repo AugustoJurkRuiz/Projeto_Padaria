@@ -21,7 +21,7 @@ export class ClienteCrudComponent implements OnInit {
 
   // Método chamado ao inicializar o componente
   ngOnInit(): void {
-    this.clienteService.read().subscribe(clientes => {
+    this.clienteService.readClientes().subscribe(clientes => {
       this.allClientes = clientes;
       this.filteredClientes = clientes;
     });
@@ -34,8 +34,9 @@ export class ClienteCrudComponent implements OnInit {
 
   filterClientes(): void {
     const term = this.searchTerm.toLowerCase();
-    this.filteredClientes = this.allClientes.filter(p =>
-      p.cliNome.toLowerCase().includes(term)
+    this.filteredClientes = this.allClientes.filter(cliente =>
+      cliente.cliNome.toLowerCase().includes(term) ||
+      cliente.cliCpf.toLowerCase().includes(term)
     );
   }
 }

@@ -45,6 +45,7 @@ import { ContatoDeleteComponent } from './component/contato/contato-delete/conta
 import { MatSelectModule } from '@angular/material/select'; // Adicionado
 import { MatDatepickerModule } from '@angular/material/datepicker'; // Adicionado
 import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
+import { MatIconModule } from '@angular/material/icon'; //Adicionado
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
     FormaPagamentoDeleteComponent,
     ContatoUpdateComponent,
     ContatoDeleteComponent,
+
     
   ],
   imports: [
@@ -96,7 +98,8 @@ import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
     MatTableModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

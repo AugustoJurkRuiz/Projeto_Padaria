@@ -14,7 +14,14 @@ export class ClienteReadComponent implements OnInit {
   // Array que armazena os dados dos clientes
 
   // Colunas exibidas na tabela
-  displayedColumns = ['cliId', 'cliNome', 'cliCpf', 'cliEmail', 'cliTelefone', 'action'];
+  displayedColumns = ['cliId',
+    'cliNome',
+    'cliCpf',
+    'conEmail',
+    'conCelular',
+    'conTelefoneComercial',
+    'action'
+  ];
 
   // Construtor que injeta o serviço ClienteService
   constructor(private clienteService: ClienteService) { }
@@ -22,7 +29,7 @@ export class ClienteReadComponent implements OnInit {
   // Método chamado ao inicializar o componente
   ngOnInit(): void {
     // Chama o método 'read' do serviço para buscar os dados dos clientes
-    this.clienteService.read().subscribe(clientes => {
+    this.clienteService.readClientes().subscribe(clientes => {
       this.clientes = clientes; // Armazena os dados retornados no array 'cliente'
       console.log(clientes); // Exibe os dados no console para depuração
     });

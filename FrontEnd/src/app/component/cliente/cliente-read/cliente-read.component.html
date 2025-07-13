@@ -23,19 +23,26 @@
     </ng-container>
 
     <!-- Coluna de E-mail -->
-    <ng-container matColumnDef="cliEmail">
+    <ng-container matColumnDef="conEmail">
       <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">E-mail</th> <!-- Cabeçalho da coluna -->
       <!-- UTILIZAÇÃO DE PIPES -->
-      <td mat-cell *matCellDef="let row">{{row.cliEmail}}</td> <!-- Dados da célula -->
+      <td mat-cell *matCellDef="let row">{{row.conEmail}}</td> <!-- Dados da célula -->
     </ng-container>
 
     <!-- Coluna de Telefone -->
-    <ng-container matColumnDef="cliTelefone">
-      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">Telefone</th>
-      <!-- Cabeçalho da coluna -->
+    <ng-container matColumnDef="conCelular">
+      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">Celular</th><!-- Cabeçalho da coluna -->
       <!-- UTILIZAÇÃO DE PIPES -->
-      <td mat-cell *matCellDef="let row">{{row.cliTelefone}}</td> <!-- Dados da célula -->
+      <td mat-cell *matCellDef="let row">{{row.conCelular}}</td> <!-- Dados da célula -->
     </ng-container>
+
+    <!-- Coluna de Telefone -->
+    <ng-container matColumnDef="conTelefoneComercial">
+      <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">Telefone Comercial</th><!-- Cabeçalho da coluna -->
+      <!-- UTILIZAÇÃO DE PIPES -->
+      <td mat-cell *matCellDef="let row">{{row.conTelefoneComercial}}</td> <!-- Dados da célula -->
+    </ng-container>
+
 
     <!-- Coluna de Ações -->
     <ng-container matColumnDef="action">

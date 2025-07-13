@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit{
       this.productCount = products.length; // Conta a quantidade de produtos
     const count = this.productService.getProductCount();
   });
-    this.clienteService.read().subscribe(clientes => {
+    this.clienteService.readClientes().subscribe(clientes => {
       this.clienteCount = clientes.length; // Conta a quantidade de clientes
     const count = this.clienteService.getClienteCount();
   });
