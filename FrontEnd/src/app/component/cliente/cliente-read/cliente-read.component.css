@@ -21,10 +21,10 @@ th, td {
 
 /* Estiliza o ícone de edição */
 .edit > i {
-    color: #d9cd26; /* Define a cor do ícone de edição como amarelo */
+    color: #7fc96c; /* Define a cor do ícone de edição como amarelo */
 }
 
 /* Estiliza o ícone de exclusão */
 .delete > i {
-    color: #e35e6b; /* Define a cor do ícone de exclusão como vermelho */
+    color: #d45662; /* Define a cor do ícone de exclusão como vermelho */
 }

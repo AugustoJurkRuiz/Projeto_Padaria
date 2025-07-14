@@ -3,13 +3,17 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Observable } from "rxjs";
 import { Fornecedor } from './fornecedor.model';
+import { Contato } from "../contato/contato-read.model";
+import { Endereco } from "../endereco/endereco.model";
 
 @Injectable({
   providedIn: 'root' // Define o serviço como singleton no root module
 })
 export class FornecedorService {
 
-  baseUrl = "http://localhost:8080/fornecedor"; // URL base da API
+  private fornecedorBaseUrl = "http://localhost:8080/fornecedor"; // URL base da API
+  private contatoBaseUrl = "http://localhost:9090/contatos";
+  private enderecoBaseUrl = "http://localhost:9090/enderecos"; // <= ENDEREÇO BASE
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -23,30 +27,30 @@ export class FornecedorService {
   }
 
   // Cria um novo fornecedor
-  create(fornecedor: Fornecedor): Observable<Fornecedor> {
-    return this.http.post<Fornecedor>(this.baseUrl, fornecedor);
+  createFornecedor(fornecedor: Fornecedor): Observable<Fornecedor> {
+    return this.http.post<Fornecedor>(this.fornecedorBaseUrl, fornecedor);
   }
 
   // Obtém a lista de fornecedores
-  read(): Observable<Fornecedor[]> {
-    return this.http.get<Fornecedor[]>(this.baseUrl);
+  readFornecedor(): Observable<Fornecedor[]> {
+    return this.http.get<Fornecedor[]>(this.fornecedorBaseUrl);
   }
 
   // Obtém um fornecedor pelo ID
-  readById(id: string): Observable<Fornecedor> {
-    const url = `${this.baseUrl}/${id}`;
+  readFornecedorbyId(id: string): Observable<Fornecedor> {
+    const url = `${this.fornecedorBaseUrl}/${id}`;
     return this.http.get<Fornecedor>(url);
   }
 
   // Atualiza um fornecedor existente
-  update(fornecedor: Fornecedor): Observable<Fornecedor> {
-    const url = `${this.baseUrl}/${fornecedor.forId}`;
+  updateFornecedor(fornecedor: Fornecedor): Observable<Fornecedor> {
+    const url = `${this.fornecedorBaseUrl}/${fornecedor.forId}`;
     return this.http.put<Fornecedor>(url, fornecedor);
   }
 
   // Exclui um fornecedor pelo ID
-  delete(id: number): Observable<Fornecedor> {
-    const url = `${this.baseUrl}/${id}`;
+  deleteFornecedor(id: number): Observable<Fornecedor> {
+    const url = `${this.fornecedorBaseUrl}/${id}`;
     return this.http.delete<Fornecedor>(url);
   }
 
@@ -59,5 +63,53 @@ export class FornecedorService {
 
   getfornecedorCount(): number {
   return this._fornecedorCount;
+  }
+  
+  // ===== CONTATOS =====
+  createContato(contato: Contato): Observable<Contato> {
+    return this.http.post<Contato>(this.contatoBaseUrl, contato);
+  }
+
+  readContatos(): Observable<Contato[]> {
+    return this.http.get<Contato[]>(this.contatoBaseUrl);
+  }
+
+  readContatoById(id: string): Observable<Contato> {
+    const url = `${this.contatoBaseUrl}/${id}`;
+    return this.http.get<Contato>(url);
+  }
+
+  updateContato(contato: Contato): Observable<Contato> {
+    const url = `${this.contatoBaseUrl}/${contato.conId}`;
+    return this.http.put<Contato>(url, contato);
+  }
+
+  deleteContato(id: number): Observable<Contato> {
+    const url = `${this.contatoBaseUrl}/${id}`;
+    return this.http.delete<Contato>(url);
+  }
+
+  // ===== ENDEREÇOS =====
+  createEndereco(endereco: Endereco): Observable<Endereco> {
+    return this.http.post<Endereco>(this.enderecoBaseUrl, endereco);
+  }
+
+  readEnderecos(): Observable<Endereco[]> {
+    return this.http.get<Endereco[]>(this.enderecoBaseUrl);
+  }
+
+  readEnderecoById(id: string): Observable<Endereco> {
+    const url = `${this.enderecoBaseUrl}/${id}`;
+    return this.http.get<Endereco>(url);
+  }
+
+  updateEndereco(endereco: Endereco): Observable<Endereco> {
+    const url = `${this.enderecoBaseUrl}/${endereco.endId}`;
+    return this.http.put<Endereco>(url, endereco);
+  }
+
+  deleteEndereco(id: number): Observable<Endereco> {
+    const url = `${this.enderecoBaseUrl}/${id}`;
+    return this.http.delete<Endereco>(url);
   }
 }

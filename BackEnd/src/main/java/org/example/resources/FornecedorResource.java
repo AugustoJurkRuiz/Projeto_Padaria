@@ -14,44 +14,44 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping(value = "/fornecedores")
+@RequestMapping(value = "/fornecedor")
 public class FornecedorResource {
 
 
     @Autowired
-    private FornecedorService service;
+    private FornecedorService FornecedorService;
 
     @GetMapping
     public ResponseEntity<List<FornecedorDto>> getAll() {
-        List<Fornecedor> list = service.findAll();
-        List<FornecedorDto> listDto = list.stream().map(obj -> service.toNewDto(obj)).collect(Collectors.toList());
+        List<Fornecedor> list = FornecedorService.findAll();
+        List<FornecedorDto> listDto = list.stream().map(obj -> FornecedorService.toNewDto(obj)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDto);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Fornecedor> findById(@PathVariable Long id) {
-        Fornecedor obj = service.findById(id);
-        FornecedorDto dto = service.toNewDto(obj);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<FornecedorDto> findById(@PathVariable Long id) {
+        Fornecedor obj = FornecedorService.findById(id);
+        FornecedorDto dto = FornecedorService.toNewDto(obj);
+        return ResponseEntity.ok().body(dto);
     }
 
     @PostMapping
     public ResponseEntity<Void> insert(@Valid @RequestBody  FornecedorDto objDto) {
-        Fornecedor obj = service.fromDTO(objDto);
-        obj = service.insert(obj);
+        Fornecedor obj = FornecedorService.fromDTO(objDto);
+        obj = FornecedorService.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getForId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<Void> update(@Valid @RequestBody FornecedorDto objDto, @PathVariable Long id) {
-        service.update(id, objDto);
+        FornecedorService.update(id, objDto);
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCliente(@PathVariable Long id) {
-        service.deleteFornecedor(id);
+        FornecedorService.deleteFornecedor(id);
         return ResponseEntity.noContent().build();
     }
 }

@@ -14,20 +14,28 @@ export class FornecedorCreateComponent implements OnInit {
     forNomeFantasia: '',
     forCnpj: '',
     forRazaoSocial: '',
+    conCelular: '',
+    conTelefoneComercial: '',
+    conEmail: '',
+    endRua: '',
+    endNumero: '',
+    endCidade: '',
+    endCep: '',
+    endEstado: ''
   };
 
   // Injeta o serviço FornecedorService e o roteador Router no construtor
   constructor(
     private fornecedorService: FornecedorService,
     private router: Router
-  ) {}
+  ) { }
 
   // Método executado ao inicializar o componente
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   // Método para criar um novo fornecedor
   createFornecedor(): void {
-    this.fornecedorService.create(this.fornecedor).subscribe(() => {
+    this.fornecedorService.createFornecedor(this.fornecedor).subscribe(() => {
       this.fornecedorService.showMessage('Fornecedor criado!'); // Exibe mensagem de sucesso
       this.router.navigate(['/fornecedor']); // Redireciona para a lista de produtos
     });

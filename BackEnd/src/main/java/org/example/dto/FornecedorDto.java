@@ -1,9 +1,15 @@
 package org.example.dto;
 
+import org.hibernate.validator.constraints.br.CNPJ;
+
+import javax.validation.constraints.NotBlank;
+
 public class FornecedorDto {
 
     private Long forId;
     private String forNomeFantasia;
+    @CNPJ(message = "CNPJ inválido")
+    @NotBlank(message = "CNPJ é obrigatório")
     private String forCnpj;
     private String forRazaoSocial;
 

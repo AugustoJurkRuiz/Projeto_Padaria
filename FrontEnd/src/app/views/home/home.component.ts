@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit{
       this.formaPagamentoCount = formaPagamento.length; // Conta a quantidade de formas de pagamentos
     const count = this.formaPagamentoService.getformaPagamentoCount();
   });
-  this.fornecedorService.read().subscribe(fornecedor => {
+  this.fornecedorService.readFornecedor().subscribe(fornecedor => {
       this.fornecedorCount = fornecedor.length; // Conta a quantidade de formas de pagamentos
     const count = this.fornecedorService.getfornecedorCount();
   });
