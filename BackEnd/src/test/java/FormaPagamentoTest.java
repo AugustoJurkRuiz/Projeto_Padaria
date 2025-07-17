@@ -18,7 +18,7 @@ class FormaPagamentoTest {
     void setUp() {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
-        formaPagamento = new FormaPagamento(1L, "Cartão de Crédito", "S", true, 12, new BigDecimal("1.50"));
+        formaPagamento = new FormaPagamento(1L, "Cartão de Crédito", true, true, 12, new BigDecimal("1.50"));
     }
 
     @Test

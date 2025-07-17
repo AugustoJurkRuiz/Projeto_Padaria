@@ -23,7 +23,7 @@ th, td {
 /* Estiliza os ícones dentro de elementos com a classe "edit" 
    com uma cor amarela */
 .edit > i {
-    color: #d9cd26;
+    color: #7fc96c;
 }
 
 /* Estiliza os ícones dentro de elementos com a classe "delete" 

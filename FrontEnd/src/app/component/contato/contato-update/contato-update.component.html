@@ -1,15 +1,27 @@
 <mat-card>
-    <mat-card-title>Alterar Produto</mat-card-title>
+    <mat-card-title>Atualizar Produto</mat-card-title>
+    <div class="linha-amarela"></div>
     <form>
-        <mat-form-field>
-            <input matInput placeholder="Telefone Comercial" [(ngModel)]="contato.conTelefoneComercial" name="conTelefoneComercial">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Celular" [(ngModel)]="contato.conCelular" name="conCelular">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="E-mail" [(ngModel)]="contato.conEmail" name="conEmail">
-        </mat-form-field>
+        <!-- Campo para alterar o celular -->
+        <mat-form-field appearance="outline">
+      <mat-label>Celular</mat-label>
+      <mat-icon matPrefix>smartphone</mat-icon>
+      <input matInput [(ngModel)]="contato.conCelular" name="conCelular"  required>
+    </mat-form-field>
+    
+        <!-- Campo para alterar o telefone comercial -->
+    <mat-form-field appearance="outline">
+      <mat-label>Telefone Comercial</mat-label>
+      <mat-icon matPrefix>phone</mat-icon>
+      <input matInput [(ngModel)]="contato.conTelefoneComercial" name="conTelefoneComercial"  required>
+    </mat-form-field>
+
+        <!-- Campo para alterar o email -->
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <mat-icon matPrefix>email</mat-icon>
+      <input matInput [(ngModel)]="contato.conEmail" name="conEmail" required>
+    </mat-form-field>
     </form>
 
     <button mat-raised-button (click)="updateContato()" color="primary">

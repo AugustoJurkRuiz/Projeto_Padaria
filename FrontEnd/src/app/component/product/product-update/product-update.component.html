@@ -1,57 +1,89 @@
 <mat-card>
-    <mat-card-title>Alterar Produto</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="product.proNome" name="proNome">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Preço de custo(R$)" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Preço de venda(R$)" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput type="number" placeholder="Quantidade em estoque" [(ngModel)]="product.proQuantidadeEstoque" name="proQuantidadeEstoque" min="0">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Categoria" [(ngModel)]="product.proCategoria" name="proCategoria">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Código de barras" [(ngModel)]="product.proCodigoBarras" name="proCodigoBarras">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Marca" [(ngModel)]="product.proMarca" name="proMarca">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Unidade de medida" [(ngModel)]="product.proUnidadeMedida" name="proUnidadeMedida">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Produto Ativo?</mat-label>
-            <mat-select [(ngModel)]="product.proAtivo" name="proAtivo">
-              <mat-option [value]="true">Sim</mat-option>
-              <mat-option [value]="false">Não</mat-option>
-            </mat-select>
-          </mat-form-field>
-     
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker1" placeholder="Data de Cadastro" [(ngModel)]="product.proDataCadastro" name="proDataCadastro">
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-     
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker2" placeholder="Data de Atualização" [(ngModel)]="product.proDataAtualizacao" name="proDataAtualizacao">
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2></mat-datepicker>
-          </mat-form-field>
-    </form>
+  <mat-card-title class="titulo">Atualizar Produto</mat-card-title>
+  <div class="linha-amarela"></div>
 
-    <button mat-raised-button (click)="updateProduct()" color="primary">
-        Atualizar
-    </button>
-   
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
+  <form class="formulario">
+    <h3 class="subtitulo">Informações do Produto</h3>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <mat-icon matPrefix>inventory</mat-icon>
+      <input matInput [(ngModel)]="product.proNome" name="proNome" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <mat-icon matPrefix>description</mat-icon>
+      <textarea matInput [(ngModel)]="product.proDescricao" name="proDescricao"  required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Preço de Custo (R$)</mat-label>
+      <mat-icon matPrefix>attach_money</mat-icon>
+      <input matInput type="number" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto" step="0.01" min="0"  required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Preço de Venda (R$)</mat-label>
+      <mat-icon matPrefix>price_change</mat-icon>
+      <input matInput type="number" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda" step="0.01" min="0"  required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Quantidade em Estoque</mat-label>
+      <mat-icon matPrefix>inventory_2</mat-icon>
+      <input matInput type="number" [(ngModel)]="product.proQuantidadeEstoque" name="proQuantidadeEstoque" min="0"  required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Categoria</mat-label>
+      <mat-icon matPrefix>category</mat-icon>
+      <input matInput [(ngModel)]="product.proCategoria" name="proCategoria"  required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Código de Barras</mat-label>
+      <mat-icon matPrefix>qr_code</mat-icon>
+      <input matInput [(ngModel)]="product.proCodigoBarras" name="proCodigoBarras"  required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Marca</mat-label>
+      <mat-icon matPrefix>store</mat-icon>
+      <input matInput [(ngModel)]="product.proMarca" name="proMarca" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Unidade de Medida</mat-label>
+      <mat-icon matPrefix>straighten</mat-icon>
+      <input matInput [(ngModel)]="product.proUnidadeMedida" name="proUnidadeMedida"  required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Produto Ativo?</mat-label>
+      <mat-select [(ngModel)]="product.proAtivo" name="proAtivo"  required>
+        <mat-option [value]="true">Sim</mat-option>
+        <mat-option [value]="false">Não</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Data de Cadastro</mat-label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="product.proDataCadastro" name="proDataCadastro" required>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Data de Atualização</mat-label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="product.proDataAtualizacao" name="proDataAtualizacao"  required>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <div class="botoes">
+      <button mat-raised-button (click)="updateProduct()" color="primary">Atualizar</button>
+      <button mat-raised-button (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
 </mat-card>

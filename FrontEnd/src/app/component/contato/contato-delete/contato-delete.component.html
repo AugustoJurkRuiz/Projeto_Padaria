@@ -1,15 +1,27 @@
 <mat-card>
     <mat-card-title>Excluir Contato</mat-card-title>
+    <div class="linha-amarela"></div>
     <form>
-        <mat-form-field>
-            <input matInput placeholder="Telefone Comercial" [value]="contato.conTelefoneComercial" name="conTelefoneComercial" disabled>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Celular" [value]="contato.conCelular" name="conCelular" disabled>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="E-mail" [value]="contato.conEmail" name="conEmail" disabled>
-        </mat-form-field>
+        <!-- Campo do celular -->
+        <mat-form-field appearance="outline">
+      <mat-label>Celular</mat-label>
+      <mat-icon matPrefix>smartphone</mat-icon>
+      <input matInput [(ngModel)]="contato.conCelular" name="conCelular"  required>
+    </mat-form-field>
+    
+        <!-- Campo do telefone comercial -->
+    <mat-form-field appearance="outline">
+      <mat-label>Telefone Comercial</mat-label>
+      <mat-icon matPrefix>phone</mat-icon>
+      <input matInput [(ngModel)]="contato.conTelefoneComercial" name="conTelefoneComercial"  required>
+    </mat-form-field>
+
+        <!-- Campo do inserir o email -->
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <mat-icon matPrefix>email</mat-icon>
+      <input matInput [(ngModel)]="contato.conEmail" name="conEmail" required>
+    </mat-form-field>
     </form>
 
     <button mat-raised-button (click)="deleteContato()" color="warn">

@@ -4,6 +4,7 @@ form {
     flex-direction: column;
 }
 
+
 /* Estiliza o botão com margens específicas */
 button {
   background: linear-gradient(90deg, #8a6245 250px, #815b40); 
@@ -60,7 +61,6 @@ mat-form-field {
     width: 100%; /* Faz os campos de formulário ocuparem toda a largura */
     margin-bottom: 20px; /* Espaço abaixo de cada campo */
 }
-
 button {
     width: 100%; /* Faz os botões ocuparem toda a largura */
     margin-top: 10px; /* Espaço acima de cada botão */
@@ -70,4 +70,18 @@ button {
     max-height: 500px;
     overflow-y: auto;
     padding-right: 10px;
+}
+
+.subtitulo {
+  font-weight:470;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.linha-amarela {
+  height: 3.5px;
+  background-color: #FF9900;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 4px;
 }

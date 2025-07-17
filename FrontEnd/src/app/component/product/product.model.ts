@@ -9,7 +9,7 @@ export interface Product {
     proCodigoBarras?: string; // Código de barras do produto (opcional)
     proMarca?: string; // Marca do produto (opcional)
     proUnidadeMedida?: string; // Unidade de medida do produto (opcional)
-    proAtivo: boolean; // Status ativo do produto
+    proAtivo: boolean | null; // Status ativo do produto
     proDataCadastro?: string; // Data de cadastro (LocalDateTime mapeado como string)
     proDataAtualizacao?: string; // Data de atualização (LocalDateTime mapeado como string)
 }

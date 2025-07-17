@@ -12,6 +12,10 @@ export class FormaPagamentoCreateComponent implements OnInit {
   // Inicializa o objeto formaPagamento com uma descrição vazia
   formaPagamento: FormaPagamento = {
     fpgDescricao: '',
+    fpgAtivo: null,
+    fpgPermiteParcelamento: null,
+    fpgNumeroMaximoParcelas: null,
+    fpgTaxaAdicional: null
   };
 
   // Injeta o serviço formaPagamentoService e o roteador Router no construtor

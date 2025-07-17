@@ -20,10 +20,9 @@ public class FormaPagamento implements Serializable {
     @Column(name = "FPG_DESCRICAO", nullable = false)
     private String fpgDescricao;
 
-    @NotBlank(message = "Status de ativo é obrigatório")
-    @Size(max = 10, message = "Valor inválido para ativo")
+    @NotNull(message = "Status de ativo é obrigatório")
     @Column(name = "FPG_ATIVO", nullable = false)
-    private String fpgAtivo;
+    private Boolean fpgAtivo;
 
     @NotNull(message = "Permite Parcelamento é obrigatório")
     @Column(name = "FPG_PERMITE_PARCELAMENTO", nullable = false)
@@ -40,7 +39,7 @@ public class FormaPagamento implements Serializable {
     public FormaPagamento() {
     }
 
-    public FormaPagamento(Long fpgId, String fpgDescricao, String fpgAtivo, Boolean fpgPermiteParcelamento, Integer fpgNumeroMaximoParcelas, BigDecimal fpgTaxaAdicional) {
+    public FormaPagamento(Long fpgId, String fpgDescricao, Boolean fpgAtivo, Boolean fpgPermiteParcelamento, Integer fpgNumeroMaximoParcelas, BigDecimal fpgTaxaAdicional) {
         this.fpgId = fpgId;
         this.fpgDescricao = fpgDescricao;
         this.fpgAtivo = fpgAtivo;
@@ -65,11 +64,11 @@ public class FormaPagamento implements Serializable {
         this.fpgDescricao = fpgDescricao;
     }
 
-    public String getFpgAtivo() {
+    public Boolean getFpgAtivo() {
         return fpgAtivo;
     }
 
-    public void setFpgAtivo(String fpgAtivo) {
+    public void setFpgAtivo(Boolean fpgAtivo) {
         this.fpgAtivo = fpgAtivo;
     }
 

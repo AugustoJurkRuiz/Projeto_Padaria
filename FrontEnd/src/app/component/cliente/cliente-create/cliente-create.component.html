@@ -1,7 +1,8 @@
 <!-- Card que contém o formulário para criar um novo cliente -->
 <mat-card>
   <!-- Título do card -->
-  <mat-card-title class="titulo">Novo Cliente</mat-card-title>
+  <mat-card-title class="titulo">Cadastrar Cliente</mat-card-title>
+  <div class="linha-amarela"></div>
 
   <!-- Formulário para entrada de dados do cliente -->
   <form class="formulario">
@@ -12,13 +13,13 @@
     <mat-form-field appearance="outline">
       <mat-label>Nome</mat-label>
       <mat-icon matPrefix>person</mat-icon>
-      <input matInput [(ngModel)]="cliente.cliNome" name="cliNome">
+      <input matInput [(ngModel)]="cliente.cliNome" name="cliNome"  required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>CPF</mat-label>
       <mat-icon matPrefix>badge</mat-icon>
-      <input matInput [(ngModel)]="cliente.cliCpf" name="cliCpf">
+      <input matInput [(ngModel)]="cliente.cliCpf" name="cliCpf"  required>
     </mat-form-field>
 
     <!-- Seção: Endereço -->
@@ -27,31 +28,31 @@
     <mat-form-field appearance="outline">
       <mat-label>Rua</mat-label>
       <mat-icon matPrefix>home</mat-icon>
-      <input matInput [(ngModel)]="cliente.endRua" name="endRua">
+      <input matInput [(ngModel)]="cliente.endRua" name="endRua"  required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Número</mat-label>
       <mat-icon matPrefix>pin</mat-icon>
-      <input matInput [(ngModel)]="cliente.endNumero" name="endNumero">
+      <input matInput [(ngModel)]="cliente.endNumero" name="endNumero"  required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Cidade</mat-label>
       <mat-icon matPrefix>location_city</mat-icon>
-      <input matInput [(ngModel)]="cliente.endCidade" name="endCidade">
+      <input matInput [(ngModel)]="cliente.endCidade" name="endCidade"  required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>CEP</mat-label>
       <mat-icon matPrefix>markunread_mailbox</mat-icon>
-      <input matInput [(ngModel)]="cliente.endCep" name="endCep">
+      <input matInput [(ngModel)]="cliente.endCep" name="endCep"  required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Estado</mat-label>
       <mat-icon matPrefix>map</mat-icon>
-      <input matInput [(ngModel)]="cliente.endEstado" name="endEstado">
+      <input matInput [(ngModel)]="cliente.endEstado" name="endEstado"  required>
     </mat-form-field>
 
     <!-- Seção: Contato -->
@@ -60,19 +61,19 @@
     <mat-form-field appearance="outline">
       <mat-label>Celular</mat-label>
       <mat-icon matPrefix>smartphone</mat-icon>
-      <input matInput [(ngModel)]="cliente.conCelular" name="conCelular">
+      <input matInput [(ngModel)]="cliente.conCelular" name="conCelular"  required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Telefone Comercial</mat-label>
       <mat-icon matPrefix>phone</mat-icon>
-      <input matInput [(ngModel)]="cliente.conTelefoneComercial" name="conTelefoneComercial">
+      <input matInput [(ngModel)]="cliente.conTelefoneComercial" name="conTelefoneComercial"  required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>E-mail</mat-label>
       <mat-icon matPrefix>email</mat-icon>
-      <input matInput [(ngModel)]="cliente.conEmail" name="conEmail">
+      <input matInput [(ngModel)]="cliente.conEmail" name="conEmail" required>
     </mat-form-field>
 
     <!-- Botões -->

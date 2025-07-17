@@ -19,7 +19,7 @@ export class ProductCreateComponent implements OnInit {
     proCodigoBarras: '', // Código de barras do produto
     proMarca: '', // Marca do produto
     proUnidadeMedida: '', // Unidade de medida do produto
-    proAtivo: true, // Status ativo inicial
+    proAtivo: null, // Status ativo inicial
     proDataCadastro: '', // Data de cadastro inicial (vazia para datetime-local)
     proDataAtualizacao: '' // Data de atualização inicial (vazia para datetime-local)
 
