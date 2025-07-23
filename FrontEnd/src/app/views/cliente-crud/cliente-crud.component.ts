@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/component/cliente/cliente.model';
 import { ClienteService } from 'src/app/component/cliente/cliente.service';
+import { HeaderService } from 'src/app/component/template/header/header.service';
 
 @Component({
   selector: 'app-cliente-crud', // Define o seletor do componente
@@ -15,12 +16,15 @@ export class ClienteCrudComponent implements OnInit {
 
   // Construtor para injetar o serviço de roteamento
   constructor(
+    private headerService: HeaderService,
     private router: Router,
     private clienteService: ClienteService
     ) { }
 
   // Método chamado ao inicializar o componente
   ngOnInit(): void {
+    this.headerService.setTitulo('Clientes');
+    this.headerService.setIcone('person');
     this.clienteService.readClientes().subscribe(clientes => {
       this.allClientes = clientes;
       this.filteredClientes = clientes;

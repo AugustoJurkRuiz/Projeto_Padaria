@@ -46,6 +46,11 @@ import { MatSelectModule } from '@angular/material/select'; // Adicionado
 import { MatDatepickerModule } from '@angular/material/datepicker'; // Adicionado
 import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
 import { MatIconModule } from '@angular/material/icon'; //Adicionado
+import { VendaCreateComponent } from './component/venda/venda-create/venda-create.component';
+import { VendaCrudComponent } from './views/venda-crud/venda-crud.component';
+import { VendaReadComponent } from './component/venda/venda-read/venda-read.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -79,8 +84,9 @@ import { MatIconModule } from '@angular/material/icon'; //Adicionado
     FormaPagamentoDeleteComponent,
     ContatoUpdateComponent,
     ContatoDeleteComponent,
-
-    
+    VendaCreateComponent,
+    VendaCrudComponent,
+    VendaReadComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +105,8 @@ import { MatIconModule } from '@angular/material/icon'; //Adicionado
     MatDatepickerModule,
     MatSelectModule,
     MatNativeDateModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

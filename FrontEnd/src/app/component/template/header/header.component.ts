@@ -1,7 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { icone } from 'src/app/views/home/home.component';
-import { titulo } from 'src/app/views/home/home.component';
-
+import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header/header.service';
 
 
 
@@ -12,10 +10,13 @@ import { titulo } from 'src/app/views/home/home.component';
 })
 
 export class HeaderComponent  implements  OnInit{
-  public icone = icone;
-  public titulo = titulo;
+  public titulo = '';
+  public icone = '';
+  constructor(private headerService: HeaderService) {}
+
   ngOnInit(): void {
-      
+    this.headerService.titulo$.subscribe(t => this.titulo = t);
+    this.headerService.icone$.subscribe(i => this.icone = i);
   }
   // Componente de cabeçalho vazio, pronto para implementação futura
 }

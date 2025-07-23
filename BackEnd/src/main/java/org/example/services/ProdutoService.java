@@ -17,6 +17,23 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository repository;
 
+    public void reduzirEstoque(Long produtoId, Integer quantidade) {
+        Produto produto = repository.findById(produtoId)
+                .orElseThrow(() -> new ResourceNotFoundException("Produto não encontrado"));
+
+        Integer estoqueAtual = produto.getProQuantidadeEstoque();
+        if (estoqueAtual == null) {
+            throw new IllegalStateException("Estoque do produto está nulo (produtoId = " + produtoId + ")");
+        }
+
+        if (quantidade > estoqueAtual) {
+            throw new IllegalArgumentException("Estoque insuficiente para o produtoId = " + produtoId);
+        }
+
+        produto.setProQuantidadeEstoque(estoqueAtual - quantidade);
+        repository.save(produto);
+    }
+
     public List<Produto> getAll() {
         return repository.findAll();
     }

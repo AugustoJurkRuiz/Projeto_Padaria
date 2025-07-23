@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
-<div class="conteiner">
-  <main class="main-conteiner">
-    <section class="cards">
-      <div class="card">
-        <h3><span>💰</span> Vendas do Dia</h3>
-        <p>R$ 1.250,00</p>
-      </div>
-      <div class="card">
-        <a mat-list-item routerLink="/products" class="card-link">
-          <div>
-            <h3><span>🥖</span> produtos cadastrados: </h3>
-            <p>{{ productCount }}</p>
-          </div>
-        </a>
-      </div>
-      <div class="card">
-        <h3><span>👥</span> Clientes Atendidos</h3>
-        <p>{{ clienteCount }}</p>
-      </div>
-      <div class="card warning">
-        <h3><span>🤝</span> Fornecedores</h3>
-        <p>{{ fornecedorCount }}</p>
-      </div>
-    </section>
-  </main>
-</div>
-</body>
-</html>
 
+<body>
+  <div class="conteiner">
+    <main class="main-conteiner">
+      <div class="welcome-box">
+        <a routerLink="/">
+            <img class="logo" src="assets/img/logo-padaria.png" alt="logo">
+        </a>
+        <h2>Bem-vindo ao sistema de gestão da Padoca do Guto!</h2>
+        <p class="intro-text">
+          Este sistema foi criado para facilitar o seu dia a dia e tornar a gestão da padaria mais prática, ágil e
+          organizada.
+          Aqui, você pode acompanhar o desempenho do seu negócio em tempo real, controlar o cadastro de produtos,
+          gerenciar seus fornecedores e manter o relacionamento com seus clientes sempre em dia.
+        </p>
+        <p class="intro-text">
+          Aproveite os recursos disponíveis para automatizar tarefas, reduzir erros e ganhar tempo — tudo isso com uma
+          interface simples e pensada especialmente para as necessidades de uma padaria como a nossa.
+          Se surgir alguma dúvida, você pode acessar os tutoriais ou entrar em contato com o suporte.
+        </p>
+        <p class="intro-text">
+          Vamos juntos transformar cada fornada em mais eficiência, qualidade e crescimento.
+          Um excelente dia de trabalho pra você! 👨‍🍳✨
+        </p>
+      </div>
+      <section class="cards">
+        <div class="card">
+          <h3><span>🥖</span> Produtos Cadastrados </h3>
+          <p>{{ productCount }}</p>
+        </div>
+        <div class="card">
+          <h3><span>👥</span> Clientes Cadastrados</h3>
+          <p>{{ clienteCount }}</p>
+        </div>
+        <div class="card">
+          <h3><span>🤝</span> Fornecedores Cadastrados</h3>
+          <p>{{ fornecedorCount }}</p>
+        </div>
+        <div class="card">
+          <h3><span>💲</span> Vendas Realizadas</h3>
+          <p>{{ vendaCount }}</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

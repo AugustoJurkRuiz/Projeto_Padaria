@@ -22,10 +22,20 @@ export class FormaPagamentoCreateComponent implements OnInit {
   constructor(
     private formaPagamentoService: formaPagamentoService,
     private router: Router
-  ) {}
+  ) { }
 
   // Método executado ao inicializar o componente
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
+  watchParcelamento() {
+    // Pode fazer uma verificação reativa ou simples
+    if (!this.formaPagamento.fpgPermiteParcelamento) {
+      this.formaPagamento.fpgNumeroMaximoParcelas = 0;
+    } else if(this.formaPagamento.fpgPermiteParcelamento == true){
+      this.formaPagamento.fpgNumeroMaximoParcelas = null;
+    }
+  }
 
   // Método para criar uma nova forma de pagamento
   createFormaPagamento(): void {

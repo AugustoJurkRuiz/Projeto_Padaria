@@ -21,6 +21,8 @@ import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-
 import { ContatoDeleteComponent } from './component/contato/contato-delete/contato-delete.component';
 import { ContatoUpdateComponent } from './component/contato/contato-update/contato-update.component';
 import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
+import { VendaCreateComponent } from './component/venda/venda-create/venda-create.component';
+import { VendaCrudComponent } from './views/venda-crud/venda-crud.component';
 
 const routes: Routes = [
   {
@@ -107,6 +109,14 @@ component: FormaPagamentoCreateComponent
   path: "contato/update/:conId",
   component: ContatoUpdateComponent
 },
+{
+  path: "vendas",
+  component: VendaCrudComponent
+},
+{
+  path: "vendas/create",
+  component: VendaCreateComponent
+}
 ];
 
 @NgModule({

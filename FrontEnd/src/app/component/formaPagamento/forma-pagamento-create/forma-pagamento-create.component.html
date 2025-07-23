@@ -9,19 +9,13 @@
     <mat-form-field appearance="outline">
       <mat-label>Descrição</mat-label>
       <mat-icon matPrefix>description</mat-icon>
-      <input 
-        matInput 
-        [(ngModel)]="formaPagamento.fpgDescricao" 
-        name="fpgDescricao"
-        required>
+      <input matInput [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Ativo</mat-label>
       <mat-icon matPrefix>check_circle</mat-icon>
-      <mat-select 
-        [(ngModel)]="formaPagamento.fpgAtivo" 
-        name="fpgAtivo">
+      <mat-select [(ngModel)]="formaPagamento.fpgAtivo" name="fpgAtivo">
         <mat-option [value]="true">Sim</mat-option>
         <mat-option [value]="false">Não</mat-option>
       </mat-select>
@@ -30,9 +24,8 @@
     <mat-form-field appearance="outline">
       <mat-label>Permite Parcelamento</mat-label>
       <mat-icon matPrefix>payments</mat-icon>
-      <mat-select 
-        [(ngModel)]="formaPagamento.fpgPermiteParcelamento" 
-        name="fpgPermiteParcelamento">
+      <mat-select [(ngModel)]="formaPagamento.fpgPermiteParcelamento" name="fpgPermiteParcelamento"
+        (ngModelChange)="watchParcelamento()">
         <mat-option [value]="true">Sim</mat-option>
         <mat-option [value]="false">Não</mat-option>
       </mat-select>
@@ -41,23 +34,14 @@
     <mat-form-field appearance="outline">
       <mat-label>Número Máximo de Parcelas</mat-label>
       <mat-icon matPrefix>pin</mat-icon>
-      <input 
-        matInput 
-        type="number" 
-        [(ngModel)]="formaPagamento.fpgNumeroMaximoParcelas" 
-        name="fpgNumeroMaximoParcelas"
-        min="1">
+      <input matInput type="number" [(ngModel)]="formaPagamento.fpgNumeroMaximoParcelas" name="fpgNumeroMaximoParcelas"
+        min="1" [disabled]="!formaPagamento.fpgPermiteParcelamento">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Taxa Adicional (%)</mat-label>
       <mat-icon matPrefix>percent</mat-icon>
-      <input 
-        matInput 
-        type="number" 
-        [(ngModel)]="formaPagamento.fpgTaxaAdicional" 
-        name="fpgTaxaAdicional"
-        step="0.01"
+      <input matInput type="number" [(ngModel)]="formaPagamento.fpgTaxaAdicional" name="fpgTaxaAdicional" step="0.01"
         min="0">
     </mat-form-field>
 

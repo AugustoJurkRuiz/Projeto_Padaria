@@ -1,0 +1,21 @@
+table {
+    width: 1000px;
+    width: 100%;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    overflow: hidden; /* força os cantos arredondados mesmo com conteúdo */
+}
+
+th {
+    color: #F5EBDD;
+    font-weight: bold;
+    padding: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+th, td {
+  border-bottom: 1px solid #FF9900; /* cor da divisória */
+  padding: 10px;
+}
+

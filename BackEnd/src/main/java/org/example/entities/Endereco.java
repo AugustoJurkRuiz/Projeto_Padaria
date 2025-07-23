@@ -41,8 +41,8 @@ public class Endereco implements Serializable {
     private String endCidade;
 
     @NotBlank(message = "CEP é obrigatório")
-    @Size(max = 8, message = "CEP deve ter no máximo 8 caracteres")
-    @Column(name = "END_CEP", length = 8, nullable = false)
+    @Size(max = 9, message = "CEP deve ter no máximo 8 caracteres")
+    @Column(name = "END_CEP", length = 9, nullable = false)
     private String endCep;
 
     @NotBlank(message = "Estado é obrigatório")
