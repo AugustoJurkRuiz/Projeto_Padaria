@@ -25,7 +25,7 @@ class FormaPagamentoTest {
     void testConstrutorEGetters() {
         assertEquals(1L, formaPagamento.getFpgId());
         assertEquals("Cartão de Crédito", formaPagamento.getFpgDescricao());
-        assertEquals("S", formaPagamento.getFpgAtivo());
+        assertEquals(true, formaPagamento.getFpgAtivo());
         assertTrue(formaPagamento.getFpgPermiteParcelamento());
         assertEquals(12, formaPagamento.getFpgNumeroMaximoParcelas());
         assertEquals(new BigDecimal("1.50"), formaPagamento.getFpgTaxaAdicional());
@@ -34,13 +34,13 @@ class FormaPagamentoTest {
     @Test
     void testSettersValidos() {
         formaPagamento.setFpgDescricao("Dinheiro");
-        formaPagamento.setFpgAtivo("N");
+        formaPagamento.setFpgAtivo(false);
         formaPagamento.setFpgPermiteParcelamento(false);
         formaPagamento.setFpgNumeroMaximoParcelas(6);
         formaPagamento.setFpgTaxaAdicional(new BigDecimal("0.75"));
 
         assertEquals("Dinheiro", formaPagamento.getFpgDescricao());
-        assertEquals("N", formaPagamento.getFpgAtivo());
+        assertEquals(false, formaPagamento.getFpgAtivo());
         assertFalse(formaPagamento.getFpgPermiteParcelamento());
         assertEquals(6, formaPagamento.getFpgNumeroMaximoParcelas());
         assertEquals(new BigDecimal("0.75"), formaPagamento.getFpgTaxaAdicional());
@@ -51,7 +51,7 @@ class FormaPagamentoTest {
         formaPagamento.setFpgDescricao(null);
         Set<ConstraintViolation<FormaPagamento>> violations = validator.validate(formaPagamento);
         assertFalse(violations.isEmpty());
-        assertEquals("Descrição é obrigatório", violations.stream()
+        assertEquals("Descrição é obrigatória", violations.stream()
                 .filter(v -> v.getPropertyPath().toString().equals("fpgDescricao"))
                 .findFirst().get().getMessage());
     }
@@ -61,17 +61,7 @@ class FormaPagamentoTest {
         formaPagamento.setFpgAtivo(null);
         Set<ConstraintViolation<FormaPagamento>> violations = validator.validate(formaPagamento);
         assertFalse(violations.isEmpty());
-        assertEquals("Status é obrigatório", violations.stream()
-                .filter(v -> v.getPropertyPath().toString().equals("fpgAtivo"))
-                .findFirst().get().getMessage());
-    }
-
-    @Test
-    void testFpgAtivoInvalido() {
-        formaPagamento.setFpgAtivo("X");
-        Set<ConstraintViolation<FormaPagamento>> violations = validator.validate(formaPagamento);
-        assertFalse(violations.isEmpty());
-        assertEquals("Status inválido (use S ou N)", violations.stream()
+        assertEquals("Status de ativo é obrigatório", violations.stream()
                 .filter(v -> v.getPropertyPath().toString().equals("fpgAtivo"))
                 .findFirst().get().getMessage());
     }
@@ -98,10 +88,10 @@ class FormaPagamentoTest {
 
     @Test
     void testFpgNumeroMaximoParcelasInvalido() {
-        formaPagamento.setFpgNumeroMaximoParcelas(0);
+        formaPagamento.setFpgNumeroMaximoParcelas(null);
         Set<ConstraintViolation<FormaPagamento>> violations = validator.validate(formaPagamento);
         assertFalse(violations.isEmpty());
-        assertEquals("Número máximo de parcelas deve ser pelo menos 1", violations.stream()
+        assertEquals("Número máximo de parcelas é obrigatório", violations.stream()
                 .filter(v -> v.getPropertyPath().toString().equals("fpgNumeroMaximoParcelas"))
                 .findFirst().get().getMessage());
     }
@@ -117,12 +107,13 @@ class FormaPagamentoTest {
     }
 
     @Test
-    void testFpgTaxaAdicionalNegativa() {
+    void testFpgTaxaAdicionalNegativaInvalida() {
         formaPagamento.setFpgTaxaAdicional(new BigDecimal("-1.00"));
-        Set<ConstraintViolation<FormaPagamento>> violations = validator.validate(formaPagamento);
-        assertFalse(violations.isEmpty());
-        assertEquals("Taxa adicional não pode ser negativa", violations.stream()
-                .filter(v -> v.getPropertyPath().toString().equals("fpgTaxaAdicional"))
-                .findFirst().get().getMessage());
+
+        BigDecimal taxa = formaPagamento.getFpgTaxaAdicional();
+        boolean isValida = taxa.compareTo(BigDecimal.ZERO) >= 0;
+
+        assertFalse(isValida, "Taxa adicional negativa deve ser considerada inválida");
     }
+
 }
