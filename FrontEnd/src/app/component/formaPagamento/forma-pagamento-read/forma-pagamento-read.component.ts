@@ -16,7 +16,7 @@ export class FormaPagamentoReadComponent {
   @Input() formaPagamento: FormaPagamento[] = [];
  
   // Define as colunas que serão exibidas na tabela
-  displayedColumns = ['fpgId', 'fpgDescricao', 'action'];
+  displayedColumns = ['fpgId', 'fpgDescricao', 'fpgPermiteParcelamento', 'fpgNumMaxParcelas', 'fpgAtivo', 'action'];
 
   // Injeta o serviço formaPagamentoService no construtor
   constructor(private formaPagamentoService: formaPagamentoService) { }

@@ -18,7 +18,7 @@ import { FornecedorReadComponent } from './component/fornecedor/fornecedor-read/
 import { FornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
 import { ClienteReadComponent } from './component/cliente/cliente-read/cliente-read.component';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
-import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pagamento-read/forma-pagamento-read.component'; 
+import { FormaPagamentoReadComponent } from './component/formaPagamento/forma-pagamento-read/forma-pagamento-read.component';
 import { FormaPagamentoCrudComponent } from './views/forma-pagamento-crud/forma-pagamento-crud.component';
 import { ContatoReadComponent } from './component/contato/contato-read/contato-read.component';
 import { ContatoCrudComponent } from './views/contato-crud/contato-crud.component';
@@ -50,6 +50,7 @@ import { VendaCreateComponent } from './component/venda/venda-create/venda-creat
 import { VendaCrudComponent } from './views/venda-crud/venda-crud.component';
 import { VendaReadComponent } from './component/venda/venda-read/venda-read.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -106,7 +107,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatNativeDateModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

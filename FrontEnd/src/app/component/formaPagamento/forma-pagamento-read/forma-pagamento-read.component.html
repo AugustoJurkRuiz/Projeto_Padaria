@@ -12,6 +12,24 @@
         <td mat-cell *matCellDef="let row">{{row.fpgDescricao}}</td>
       </ng-container>
 
+      <!-- Permite Parcelamento -->
+      <ng-container matColumnDef="fpgPermiteParcelamento">
+        <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">Parcelamento</th>
+        <td mat-cell *matCellDef="let row">{{ row.fpgPermiteParcelamento ? 'Sim' : 'Não' }}</td>
+      </ng-container>
+
+      <!-- Número Máximo de Parcelas -->
+      <ng-container matColumnDef="fpgNumMaxParcelas">
+        <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">Nº Máx Parcelas</th>
+        <td mat-cell *matCellDef="let row">{{ row.fpgNumeroMaximoParcelas }}</td>
+      </ng-container>
+
+      <!-- Número Máximo de Parcelas -->
+      <ng-container matColumnDef="fpgAtivo">
+        <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">Ativo</th>
+        <td mat-cell *matCellDef="let row">{{ row.fpgAtivo ? 'Sim' : 'Não' }}</td>
+      </ng-container>
+
       <!-- Action Column -->
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef style="background-color: #e78d06;">Ações</th>                    
