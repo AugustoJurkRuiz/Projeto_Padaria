@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente.model'; // Modelo de dados do cliente
 import { Router } from '@angular/router'; // Para navegação entre rotas
 import { ClienteService } from '../cliente.service'; // Serviço para manipulação de dados do cliente
+import { HttpClient } from '@angular/common/http';
 
 // Decorador que define o componente Angular
 @Component({
@@ -24,8 +25,10 @@ export class ClienteCreateComponent implements OnInit {
     endEstado: ''
   };
   // Construtor que injeta o serviço ClienteService e o Router
-  constructor(private clienteService: ClienteService,
-    private router: Router) { }
+  constructor(
+    private clienteService: ClienteService,
+    private router: Router,
+    private http: HttpClient) { }
 
   // Método chamado ao inicializar o componente
   ngOnInit(): void {
@@ -57,5 +60,25 @@ export class ClienteCreateComponent implements OnInit {
   // Método para cancelar a operação e voltar para a lista de clientes
   cancel(): void {
     this.router.navigate(['/clientes']); // Navega para a lista de clientes
+  }
+
+  buscarCEP(): void {
+    const cep = this.cliente.endCep.replace(/\D/g, ''); // Remove caracteres não numéricos
+    if (cep.length === 8) {
+      this.http.get<any>(`https://viacep.com.br/ws/${cep}/json/`).subscribe({
+        next: (dados) => {
+          if (!dados.erro) {
+            this.cliente.endRua = dados.logradouro;
+            this.cliente.endCidade = dados.localidade;
+            this.cliente.endEstado = dados.uf;
+          } else {
+            this.clienteService.showMessage('CEP não encontrado.');
+          }
+        },
+        error: () => {
+          this.clienteService.showMessage('Erro ao buscar CEP.');
+        }
+      });
+    }
   }
 }

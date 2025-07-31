@@ -1,11 +1,8 @@
 package org.example.resources;
 
-import org.example.entities.Produto;
+import org.example.dto.ProdutoDto;
 import org.example.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,42 +13,36 @@ import java.util.List;
 @RequestMapping(value = "/produtos")
 public class ProdutoResource {
 
-
     @Autowired
-    private ProdutoService produtoService;
+    private ProdutoService service;
 
     @GetMapping
-    public ResponseEntity<List<Produto>> getAll() {
-        List<Produto> funcoes = produtoService.getAll();
-        return ResponseEntity.ok(funcoes);
+    public ResponseEntity<List<ProdutoDto>> findAll() {
+        List<ProdutoDto> list = service.getAll();
+        return ResponseEntity.ok(list);
     }
 
-
     @GetMapping("/{id}")
-    public ResponseEntity<Produto> findById(@PathVariable Long id) {
-        Produto obj = produtoService.findById(id);
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<ProdutoDto> findById(@PathVariable Long id) {
+        ProdutoDto dto = service.findDTOById(id);
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping
-    public ResponseEntity<Produto> insert(@RequestBody Produto produto) {
-        Produto createdProduto = produtoService.insert(produto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdProduto);
+    public ResponseEntity<ProdutoDto> insert(@RequestBody ProdutoDto dto) {
+        ProdutoDto novo = service.insert(dto);
+        return ResponseEntity.ok(novo);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Produto produto) {
-        if (produtoService.update(id, produto)) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<ProdutoDto> update(@PathVariable Long id, @RequestBody ProdutoDto dto) {
+        ProdutoDto atualizado = service.update(id, dto);
+        return ResponseEntity.ok(atualizado);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
-        produtoService.delete(id);
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
         return ResponseEntity.noContent().build();
     }
-
 }

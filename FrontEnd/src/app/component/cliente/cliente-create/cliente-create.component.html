@@ -46,7 +46,7 @@
     <mat-form-field appearance="outline">
       <mat-label>CEP</mat-label>
       <mat-icon matPrefix>markunread_mailbox</mat-icon>
-      <input matInput [(ngModel)]="cliente.endCep" name="endCep"  required>
+      <input matInput [(ngModel)]="cliente.endCep" name="endCep" (blur)="buscarCEP()" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">

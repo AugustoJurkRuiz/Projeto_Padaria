@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Fornecedor } from '../fornecedor.model';
 import { Router } from '@angular/router';
 import { FornecedorService } from '../fornecedor.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fornecedor-create', // Define o seletor do componente
@@ -27,7 +28,8 @@ export class FornecedorCreateComponent implements OnInit {
   // Injeta o serviço FornecedorService e o roteador Router no construtor
   constructor(
     private fornecedorService: FornecedorService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) { }
 
   // Método executado ao inicializar o componente
@@ -44,5 +46,25 @@ export class FornecedorCreateComponent implements OnInit {
   // Método para cancelar a criação e voltar para a lista de fornecedores
   cancel(): void {
     this.router.navigate(['/fornecedor']);
+  }
+
+  buscarCEP(): void {
+    const cep = this.fornecedor.endCep.replace(/\D/g, ''); // Remove caracteres não numéricos
+    if (cep.length === 8) {
+      this.http.get<any>(`https://viacep.com.br/ws/${cep}/json/`).subscribe({
+        next: (dados) => {
+          if (!dados.erro) {
+            this.fornecedor.endRua = dados.logradouro;
+            this.fornecedor.endCidade = dados.localidade;
+            this.fornecedor.endEstado = dados.uf;
+          } else {
+            this.fornecedorService.showMessage('CEP não encontrado.');
+          }
+        },
+        error: () => {
+          this.fornecedorService.showMessage('Erro ao buscar CEP.');
+        }
+      });
+    }
   }
 }

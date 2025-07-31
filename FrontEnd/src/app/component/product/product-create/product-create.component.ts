@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
+import { FornecedorService } from '../../fornecedor/fornecedor.service';
+import { Fornecedor } from '../../fornecedor/fornecedor.model';
 
 @Component({
   selector: 'app-product-create',
@@ -21,14 +23,23 @@ export class ProductCreateComponent implements OnInit {
     proUnidadeMedida: '', // Unidade de medida do produto
     proAtivo: null, // Status ativo inicial
     proDataCadastro: '', // Data de cadastro inicial (vazia para datetime-local)
-    proDataAtualizacao: '' // Data de atualização inicial (vazia para datetime-local)
-
+    proDataAtualizacao: '', // Data de atualização inicial (vazia para datetime-local)
+    forId: 0
   };
 
-  // Injeção de dependências: ProductService e Router
-  constructor(private productService: ProductService, private router: Router) {}
+  fornecedores: Fornecedor[] = []; 
 
-  ngOnInit(): void {}
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private fornecedorService: FornecedorService
+) {}
+
+  ngOnInit(): void {
+    this.fornecedorService.readFornecedor().subscribe((fornecedores: Fornecedor[]) => {
+      this.fornecedores = fornecedores;
+    });
+  }
 
   submitted = false;
   // Método para criar um produto
@@ -45,7 +56,8 @@ export class ProductCreateComponent implements OnInit {
       this.product.proPrecoCusto &&
       this.product.proPrecoVenda &&
       this.product.proQuantidadeEstoque &&
-      this.product.proUnidadeMedida
+      this.product.proUnidadeMedida &&
+      this.product.forId
     ) 
     
     this.productService.create(this.product).subscribe(() => {

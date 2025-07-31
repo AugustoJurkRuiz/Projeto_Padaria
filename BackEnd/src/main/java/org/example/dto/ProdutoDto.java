@@ -16,7 +16,7 @@ public class ProdutoDto {
     private String proCodigoBarras;
     private String proMarca;
     private String proUnidadeMedida;
-    private String proAtivo;
+    private Boolean proAtivo;
     private LocalDateTime proDataCadastro;
     private LocalDateTime proDataAtualizacao;
     private Long forId;
@@ -104,11 +104,11 @@ public class ProdutoDto {
         this.proUnidadeMedida = proUnidadeMedida;
     }
 
-    public String getProAtivo() {
+    public Boolean getProAtivo() {
         return proAtivo;
     }
 
-    public void setProAtivo(String proAtivo) {
+    public void setProAtivo(Boolean proAtivo) {
         this.proAtivo = proAtivo;
     }
 

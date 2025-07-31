@@ -68,6 +68,15 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Fornecedor</mat-label>
+      <mat-select [(ngModel)]="product.forId" name="forId" required>
+        <mat-option *ngFor="let fornecedor of fornecedores" [value]="fornecedor.forId">
+          {{ fornecedor.forNomeFantasia }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
       <mat-label>Data de Cadastro</mat-label>
       <input matInput [matDatepicker]="picker1" [(ngModel)]="product.proDataCadastro" name="proDataCadastro" required>
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>

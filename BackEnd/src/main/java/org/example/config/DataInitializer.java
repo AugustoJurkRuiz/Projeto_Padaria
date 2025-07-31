@@ -26,19 +26,6 @@ public class DataInitializer {
     ) {
         return args -> {
 
-            if (produtoRepository.count() == 0) {
-                produtoRepository.saveAll(Arrays.asList(
-                        new Produto(null, "Pão Francês", "Pão tradicional",
-                                BigDecimal.valueOf(0.50), BigDecimal.valueOf(1.00), 500,
-                                "Padaria", "1234567890001", "Casa do Pão", "unidade",
-                                true, LocalDateTime.now(), LocalDateTime.now()),
-
-                        new Produto(null, "Leite Integral 1L", "Leite pasteurizado",
-                                BigDecimal.valueOf(3.00), BigDecimal.valueOf(4.50), 150,
-                                "Laticínios", "7896543210002", "Itambé", "litro",
-                                true, LocalDateTime.now(), LocalDateTime.now())
-                ));
-            }
 
             if (fornecedorRepository.count() == 0) {
                 Fornecedor fornecedorPadaria = new Fornecedor(null, "Super Pão LTDA ME", "98.522.995/0001-55", "Padaria Super Pão");
@@ -54,6 +41,25 @@ public class DataInitializer {
                         new Contato(null, fornecedorPadaria, "(11) 98712-1245", "(11) 8765-4321", "contatopadariasuperpao@gmail.com"),
                         new Contato(null, fornecedorLaticinios, "(19) 98476-2543", "(19) 2222-3333", "vendasdafonte@gmail.com")
                 ));
+            }
+
+            if (produtoRepository.count() == 0) {
+                Fornecedor fornecedorPadaria = fornecedorRepository.findById(1L).orElseThrow();
+                Fornecedor fornecedorLaticinios = fornecedorRepository.findById(2L).orElseThrow();
+
+                Produto produto1 = new Produto(null, "Pão Francês", "Pão tradicional",
+                        BigDecimal.valueOf(0.50), BigDecimal.valueOf(1.00), 500,
+                        "Padaria", "1234567890001", "Casa do Pão", "unidade",
+                        true, LocalDateTime.now(), LocalDateTime.now(), fornecedorPadaria);
+                produto1.setFornecedor(fornecedorPadaria);
+
+                Produto produto2 = new Produto(null, "Leite Integral 1L", "Leite pasteurizado",
+                        BigDecimal.valueOf(3.00), BigDecimal.valueOf(4.50), 150,
+                        "Laticínios", "7896543210002", "Itambé", "litro",
+                        true, LocalDateTime.now(), LocalDateTime.now(), fornecedorLaticinios);
+                produto2.setFornecedor(fornecedorLaticinios);
+
+                produtoRepository.saveAll(Arrays.asList(produto1, produto2));
             }
 
             if (clienteRepository.count() == 0) {

@@ -28,31 +28,31 @@
     <mat-form-field appearance="outline">
       <mat-label>Rua</mat-label>
       <mat-icon matPrefix>home</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.endRua" name="endRua">
+      <input matInput [(ngModel)]="fornecedor.endRua" name="endRua" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Número</mat-label>
       <mat-icon matPrefix>pin</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.endNumero" name="endNumero">
+      <input matInput [(ngModel)]="fornecedor.endNumero" name="endNumero" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Cidade</mat-label>
       <mat-icon matPrefix>location_city</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.endCidade" name="endCidade">
+      <input matInput [(ngModel)]="fornecedor.endCidade" name="endCidade" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>CEP</mat-label>
       <mat-icon matPrefix>markunread_mailbox</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.endCep" name="endCep">
+      <input matInput [(ngModel)]="fornecedor.endCep" name="endCep" (blur)="buscarCEP()" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Estado</mat-label>
       <mat-icon matPrefix>map</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.endEstado" name="endEstado">
+      <input matInput [(ngModel)]="fornecedor.endEstado" name="endEstado" required>
     </mat-form-field>
 
     <h3 class="subtitulo">Contato</h3>
@@ -60,19 +60,19 @@
     <mat-form-field appearance="outline">
       <mat-label>Celular</mat-label>
       <mat-icon matPrefix>smartphone</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.conCelular" name="conCelular">
+      <input matInput [(ngModel)]="fornecedor.conCelular" name="conCelular" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Telefone Comercial</mat-label>
       <mat-icon matPrefix>phone</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.conTelefoneComercial" name="conTelefoneComercial">
+      <input matInput [(ngModel)]="fornecedor.conTelefoneComercial" name="conTelefoneComercial" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>E‑mail</mat-label>
       <mat-icon matPrefix>email</mat-icon>
-      <input matInput [(ngModel)]="fornecedor.conEmail" name="conEmail">
+      <input matInput [(ngModel)]="fornecedor.conEmail" name="conEmail" required>
     </mat-form-field>
 
     <div class="botoes">
